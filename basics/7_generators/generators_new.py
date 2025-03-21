@@ -383,118 +383,59 @@ print("Größe der Generator Expression:", getsizeof(large_gen_expr), "Bytes")
 # %% [markdown]
 # ## Nachteile von Generatoren gegenüber Listen
 #
-# Obwohl Generatoren viele Vorteile bieten, insbesondere in Bezug auf Speicher- und Rechenzeiteffizienz, haben sie auch einige Nachteile im Vergleich zu Listen. Es ist wichtig, diese Unterschiede zu verstehen, um entscheiden zu können, wann man einen Generator verwenden sollte und wann eine Liste besser geeignet ist.
+# Generatoren sind speicher- und zeiteffizient, haben aber Nachteile gegenüber Listen:
 #
-# ### 1. Nicht indexierbar
+# - **Nicht indexierbar**: Kein direkter Zugriff auf Elemente per Index.
+# - **Einmalige Iteration**: Nach vollständiger Durchlaufung erschöpft.
+# - **Unbekannte Länge**: `len()` funktioniert nicht, da Länge nicht definiert.
+# - **Kein zufälliger Zugriff**: Keine Möglichkeit, Elemente zu überspringen oder zurückzugehen.
+# - **Erschwertes Debugging**: Zustand schwer einsehbar.
 #
-# Generatoren unterstützen keinen direkten Indexzugriff auf ihre Elemente. Bei Listen können Sie problemlos auf ein Element an einer bestimmten Position zugreifen:
+# **Beispiele:**
 
 # %%
-# Beispiel mit einer Liste
-my_list = [0, 1, 2, 3, 4]
-print("Element mit Index 2:", my_list[2])
+# Nicht indexierbar und Einmalige Iteration
+try:
+    my_generator = (x for x in range(5))
+    print("Indexzugriff:", my_generator[2])  # Fehler
+except TypeError as e:
+    print("Fehler:", e)
 
-# %% [markdown]
-# **Ausgabe:**
-# ```
-# Element mit Index 2: 2
-# ```
-#
-# Wenn Sie jedoch versuchen, bei einem Generator einen Indexzugriff zu verwenden, führt dies zu einem Fehler, da Generatoren nicht indexierbar sind:
+print()
 
-# %%
-# Beispiel mit einem Generator
-my_generator = (x for x in range(5))
-# print("Element mit Index 2:", my_generator[2])
 
-# %% [markdown]
-# **Ausgabe:**
-# ```
-# TypeError: 'generator' object is not subscriptable
-# ```
-#
-# ### 2. Einmalige Iteration
-#
-# Generatoren können nur **einmal vollständig** durchlaufen werden. Nachdem sie erschöpft sind, liefern sie keine weiteren Werte mehr. Wenn Sie die Daten erneut benötigen, müssen Sie den Generator neu erstellen.
-
-# %%
+# Einmalige Iteration
 gen = (x for x in range(3))
-
 print("Erster Durchlauf:")
 for value in gen:
     print(value)
-
-print("\nZweiter Durchlauf:")
+print("Zweiter Durchlauf:")
 for value in gen:
-    print(value)  # Es wird nichts ausgegeben, da der Generator erschöpft ist
+    print(value)  # Keine Ausgabe
 
-# %% [markdown]
-# **Ausgabe:**
-# ```
-# Erster Durchlauf:
-# 0
-# 1
-# 2
-#
-# Zweiter Durchlauf:
-# ```
-#
-# ### 3. Keine Kenntnis der Länge
-#
-# Generatoren haben keine fest definierte Länge, da ihre Elemente erst bei Bedarf generiert werden. Daher funktioniert die `len()`-Funktion nicht mit Generatoren.
+print()
 
-# %%
-gen = (x for x in range(5))
-# print("Länge des Generators:", len(gen))
-
-# %% [markdown]
-# **Ausgabe:**
-# ```
-# TypeError: object of type 'generator' has no len()
-# ```
-#
-# ### 4. Kein zufälliger Zugriff oder Überspringen
-#
-# Bei Generatoren können Sie nicht einfach Elemente überspringen oder zu einem früheren Element zurückkehren, da die vorherigen Werte nicht gespeichert werden. Sie müssen die Elemente in der definierten Reihenfolge abrufen.
-
-# %%
-gen = (x for x in range(5))
-next(gen)  # Gibt 0 zurück
-next(gen)  # Gibt 1 zurück
-
-# Versuch, zum vorherigen Element zurückzukehren oder ein bestimmtes Element direkt anzuspringen
+# Unbekannte Länge
 try:
-    print(gen[0])
+    gen = (x for x in range(5))
+    print(len(gen))  # Fehler
+except TypeError as e:
+    print("Fehler:", e)
+
+
+print()
+
+# Kein zufälliger Zugriff
+gen = (x for x in range(5))
+next(gen)
+next(gen)
+try:
+    print(gen[0])  # Fehler
 except TypeError as e:
     print("Fehler:", e)
 
 # %% [markdown]
-# **Ausgabe:**
-# ```
-# Fehler: 'generator' object is not subscriptable
-# ```
+# **Zusammenfassung:**
 #
-# ### 5. Schwieriger zu debuggen
-#
-# Da Generatoren ihre Werte erst bei Bedarf erzeugen, kann es schwieriger sein, den Zustand oder den Inhalt eines Generators zu untersuchen. Bei Listen können Sie jederzeit den aktuellen Inhalt überprüfen; Generatoren hingegen geben ihre Werte nicht im Voraus preis.
-#
-# ### Zusammenfassung der Nachteile
-#
-# - **Nicht indexierbar**: Kein Zugriff auf Elemente per Index möglich.
-# - **Einmalige Iteration**: Nach der vollständigen Iteration ist der Generator erschöpft.
-# - **Unbekannte Länge**: Die Gesamtlänge ist nicht bekannt, `len()` funktioniert nicht.
-# - **Kein zufälliger Zugriff**: Kein Überspringen oder Zurückkehren zu Elementen möglich.
-# - **Erschwertes Debugging**: Der Inhalt kann nicht einfach inspiziert werden.
-#
-# ### Wann sollte man Listen statt Generatoren verwenden?
-#
-# - **Mehrfache Iteration**: Wenn Sie die Daten mehrmals durchlaufen müssen.
-# - **Zufälliger Zugriff**: Wenn Sie auf beliebige Elemente zugreifen müssen.
-# - **Längenbestimmung**: Wenn Sie die Anzahl der Elemente wissen oder benötigen.
-# - **Datenmanipulation**: Wenn Sie die Daten speichern, verändern oder sortieren möchten.
-# - **Debugging**: Wenn Sie den gesamten Inhalt leicht überprüfen möchten.
-#
-# **Beispielhafte Entscheidungshilfe:**
-#
-# - Verwenden Sie einen **Generator**, wenn Sie mit großen oder unendlichen Datenmengen arbeiten und Speicher sparen möchten und die Daten nur einmal sequenziell durchlaufen müssen.
-# - Verwenden Sie eine **Liste**, wenn Sie Flexibilität beim Datenzugriff benötigen, die Daten mehrmals verwenden oder verändern möchten und der Speicherbedarf kein kritischer Faktor ist.
+# - **Listen**: Eignen sich, wenn mehrfacher Zugriff, zufälliger Zugriff und Längeninformation erforderlich sind.
+# - **Generatoren**: Ideal, wenn Speicherbedarf entscheidend ist und Daten einmal sequenziell verarbeitet werden.
