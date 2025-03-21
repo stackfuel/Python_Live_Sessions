@@ -7,166 +7,403 @@
 #       format_version: '1.3'
 #       jupytext_version: 1.16.7
 #   kernelspec:
-#     display_name: stackfuel
+#     display_name: .venv
 #     language: python
 #     name: python3
 # ---
 
 # %% [markdown]
-# # Iteratoren, Generatoren und lazy evaluation
+# # Iteratoren, Generatoren und Lazy Evaluation
 #
-# Eine Liste und ein range-Objekt verhalten sich sehr ähnlich zueinander. Beide können in einer for-Schleife als iterable verwendet werden. Im Kern gibt es aber einen großen Unterschied: Eine Liste muss stets alle Elemente, die in ihr enthalten sind, im Speicher des Computers ablegen. Ein range-Objekt hingegen basiert auf einer klaren Vorschrift, wie das nächste Element gebildet werden soll, und muss daher nur den Start, das Ende und die Step-Size abspeichern.
+# In Python sind einige Datentypen **iterierbar**, was bedeutet, dass sie durchlaufen werden können, zum Beispiel in einer For-Schleife. Zu diesen iterierbaren Objekten gehören Listen, Tupel, Strings und auch spezielle Objekte wie `range`. Auf den ersten Blick verhalten sich eine Liste und ein `range`-Objekt sehr ähnlich, aber es gibt einen wichtigen Unterschied:
 #
+# - **Liste**: Enthält alle Elemente und speichert sie im Speicher.
+# - **`range`-Objekt**: Enthält nicht alle Elemente direkt, sondern erzeugt sie bei Bedarf.
+#
+# Dieser Unterschied hat Auswirkungen auf den Speicherbedarf und die Effizienz von Programmen, besonders bei der Arbeit mit großen Datenmengen. In dieser Lektion werden wir uns mit den Konzepten von **Iteratoren**, **Generatoren** und **Lazy Evaluation** beschäftigen und lernen, wie sie uns dabei helfen können, effizientere Programme zu schreiben.
+
+# %% [markdown]
+# ## Listen und `range`-Objekte im Vergleich
+#
+# Beginnen wir mit einem einfachen Beispiel, um den Unterschied zwischen Listen und `range`-Objekten zu verstehen.
 
 # %%
-# Funktion um den Speicherplatzbedarf einer Variable zu ermitteln
+# Funktion, um den Speicherplatzbedarf einer Variable zu ermitteln
 from sys import getsizeof
 
-# %%
+# Erstellen einer Liste und eines range-Objekts
 l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 r = range(10)
 
-print(type(l))
-print(type(r))
-print(l)
-print(r)
+# Ausgabe der Typen und Inhalte
+print("Typ von l:", type(l))
+print("Typ von r:", type(r))
+print("Inhalt von l:", l)
+print("Inhalt von r:", r)
+
+# %% [markdown]
+# Wir sehen, dass `l` eine Liste ist, die die Zahlen von 0 bis 9 enthält, während `r` ein `range`-Objekt ist, das die Zahlen von 0 bis 9 repräsentiert. Beim Ausgeben des `range`-Objekts sehen wir nur die Repräsentation `range(0, 10)` und nicht die einzelnen Zahlen.
+#
+# Obwohl beide Objekte ähnlich aussehen und verwendet werden können, unterscheiden sie sich in der Art, wie sie die Daten speichern.
 
 # %%
+# Iteration über die Liste
+print("Iteration über die Liste l:")
 for e in l:
     print(e, end=" ")
-    
-print("")
+print("\n")
 
+# Iteration über das range-Objekt
+print("Iteration über das range-Objekt r:")
 for e in r:
     print(e, end=" ")
- 
-
-# %%
-print(getsizeof(l))
-print(getsizeof(r))
+print("\n")
 
 # %% [markdown]
-# Wir sehen deutlich, dass die Liste mehr Speicherplatz in Anspruch nimmt als das range-Objekt. Dies liegt daran, dass die Liste jeden einzelnen Wert speichern muss, während das range-Objekt höchstens 3 Zahlen speichert. Dieser Unterschied wird umso deutlicher, je länger die Liste wird.
+# Beide Objekte können in einer For-Schleife durchlaufen werden, und die Ausgabe ist identisch.
 
 # %%
-print(getsizeof(range(500)))
-print(getsizeof(list(range(500))))
+# Speicherbedarf vergleichen
+print("Größe der Liste l:", getsizeof(l), "Bytes")
+print("Größe des range-Objekts r:", getsizeof(r), "Bytes")
 
 # %% [markdown]
-# Der Speicherbedarf für das range-Objekt bleibt konstant bei steigender Länge, während die äquivalente Liste drastisch viel mehr Speicher beansprucht.
+# Die Liste `l` benötigt mehr Speicher als das `range`-Objekt `r`. Dies liegt daran, dass die Liste alle Elemente im Speicher hält, während das `range`-Objekt nur Start-, Endwert und Schrittweite speichern muss.
 
 # %% [markdown]
+# ## Einfluss der Größe auf den Speicherbedarf
 #
-#
-#
-#
-# Es gibt weitere Funktionen in Python, die ebenfalls keine fertige Liste, sondern ein Objekt zurückgeben, das durch eine Vorschrift das nächste Element bilden kann. Map, Zip und Enumerate sind Beispiele für solche Objekte.
+# Schauen wir uns an, wie sich der Speicherbedarf ändert, wenn wir die Länge der iterierbaren Objekte erhöhen.
 
 # %%
-# wir benötigen die deepcopy funktion um die orginal Objekte unangeteastet zu lassen. Mehr dazu später
-from copy import deepcopy as copy
+large_range = range(1000000)
+large_list = list(large_range)
 
+print("Größe des range-Objekts mit 1.000.000 Elementen:", getsizeof(large_range), "Bytes")
+print("Größe der Liste mit 1.000.000 Elementen:", getsizeof(large_list), "Bytes")
+
+# %% [markdown]
+# **Erläuterung:**
+#
+# - Der Speicherbedarf des `range`-Objekts bleibt nahezu konstant, selbst bei einer Million Elemente.
+# - Die Liste benötigt jedoch über 8 MB Speicher, um alle Elemente zu speichern.
+#
+# **Hinweis:**
+#
+# Die Funktion `getsizeof` misst nur die Größe des Objekts selbst und nicht den Speicherbedarf der einzelnen Elemente. Dennoch verdeutlicht dies den Unterschied zwischen den beiden Objekttypen.
+
+# %% [markdown]
+# ## Iterables und Iterators
+#
+# In Python sind **Iterables** Objekte, die nacheinander ihre Elemente zurückgeben können. Ein **Iterator** ist ein Objekt mit einer `__next__()`-Methode, die das nächste Element zurückgibt.
+
+# %% [markdown]
+# ## Funktionen, die Iteratoren zurückgeben
+#
+# Mehrere eingebaute Funktionen in Python geben Iteratoren zurück. Beispiele sind `map`, `zip` und `enumerate`.
+
+# %%
+l = [1, 2, 3, 4, 5]
+
+# Verwenden von map
 m = map(lambda x: x**2, l)
-z = zip(l, r)
-en = enumerate(range(10, 20))
 
-# wir erstellen zu jedem Objekt eine äquivalente Liste
-l_m = list(copy(m))
-l_z = list(copy(z))
-l_en = list(copy(en))
+# Verwenden von zip
+z = zip(l, l)
 
+# Verwenden von enumerate
+e = enumerate(l)
 
-print(f"{'orginal':<10} | {'list':<10} | {'output':<10}")
+print("Typ von m:", type(m))
+print("Typ von z:", type(z))
+print("Typ von e:", type(e))
 
-print(f"{getsizeof(m):<10} | {getsizeof(l_m):<10} | {l_m}")
-print(f"{getsizeof(z):<10} | {getsizeof(l_z):<10} | {l_z}")
-print(f"{getsizeof(en):<10} | {getsizeof(l_en):<10} | {l_en}")
+# %% [markdown]
+# Alle diese Funktionen geben Iteratoren zurück, die ihre Elemente bei Bedarf generieren.
+
+# %%
+# Iterieren über die Iteratoren
+
+print("Ergebnisse von map:")
+for item in m:
+    print(item, end=" ")
+print("\n")
+
+print("Ergebnisse von zip:")
+for item in z:
+    print(item, end=" ")
+print("\n")
+
+print("Ergebnisse von enumerate:")
+for index, value in e:
+    print(f"Index {index}: Wert {value}")
+
+# %% [markdown]
+# Die Iteratoren generieren ihre Elemente erst bei der Iteration. Dies spart Speicher, da nicht alle Elemente im Voraus berechnet werden.
+
+# %% [markdown]
+# ## Eigene Iteratoren mit Generatoren erstellen
+#
+# Wenn wir Funktionen schreiben, die große Datenmengen verarbeiten, ist es hilfreich, wenn sie Iteratoren zurückgeben. Dies können wir mit Generatoren erreichen.
+
+# %% [markdown]
+# ### Generator-Funktionen mit `yield`
+#
+# Durch das Schlüsselwort `yield` können wir Funktionen schreiben, die bei jedem Aufruf von `next()` ein neues Element liefern.
+
+# %%
+def my_generator(n):
+    i = 0
+    while i < n:
+        yield i
+        i += 1
+
+gen = my_generator(5)
+print("Typ von gen:", type(gen))
+
+for num in gen:
+    print(num)
+
+# %% [markdown]
+# **Erläuterung:**
+#
+# - Die Funktion `my_generator` ist ein Generator. Bei jedem `yield` wird der aktuelle Wert von `i` zurückgegeben.
+# - Beim nächsten Aufruf wird die Ausführung nach dem `yield` fortgesetzt.
+
+# %% [markdown]
+# ### Vergleich von Funktionen mit und ohne Generatoren
+
+# %% [markdown]
+# **Funktion, die eine Liste zurückgibt:**
+
+# %%
+def squares_list(n):
+    result = []
+    for i in range(n):
+        result.append(i**2)
+    return result
+
+squares = squares_list(20)
+print("Quadratzahlen als Liste:", squares)
+print("Größe der Liste:", getsizeof(squares), "Bytes")
+
+# %% [markdown]
+# **Funktion, die einen Generator zurückgibt:**
+
+# %%
+def squares_generator(n):
+    for i in range(n):
+        yield i**2
+
+squares_gen = squares_generator(20)
+print("Quadratzahlen als Generator:", squares_gen)
+print("Größe des Generators:", getsizeof(squares_gen), "Bytes")
+
+print("Quadratzahlen aus Generator:")
+for num in squares_gen:
+    print(num, end=" ")
+print()
 
 
 # %% [markdown]
-# Es ist deutlich zu sehen, dass die Listen versionen mehr Speicher belegen.
+# **Erläuterung:**
+#
+# - Die Listenfunktion `squares_list` erstellt eine Liste aller Quadratzahlen und speichert sie im Speicher.
+# - Die Generatorfunktion `squares_generator` liefert die Quadratzahlen bei Bedarf und benötigt weniger Speicher.
 
 # %% [markdown]
-# Wollten wir eine Funktion wie die Map-Funktion selbst implementieren, hatten wir bislang nur die Möglichkeit, die Funktion auf alle Elemente der Liste anzuwenden und dann das Resultat als neue Liste zurückzugeben.
+# ## Beispiele map, zip, enumeratre Implementierung
 
 # %%
-def my_map(function, iterable):
-    res = []
-    for e in iterable:
-        res.append(function(e))
-    return res
+def my_zip(*iterables):
+    iterators = [iter(i) for i in iterables]
+    while True:
+        try:
+            result = [next(i) for i in iterators]
+            yield tuple(result)
+        except StopIteration:
+            return
 
-l = list(range(1000))
-getsizeof(my_map(lambda x: x**2, l))
+
+
+# %%
+# Beispiel für `my_zip`
+list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c']
+list3 = [True, False, True]
+
+zipped_result = my_zip(list1, list2, list3)
+
+for item in zipped_result:
+    print(item)
+
+
+# %%
+
+def my_map(f, *iteraples):
+    for args in my_zip(*iteraples):
+        yield f(*args)
+
+
+
+# %%
+
+# Beispiel für `my_map`
+def add(x, y):
+    return x + y
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+mapped_result = my_map(add, list1, list2)
+
+for item in mapped_result:
+    print(item)
+
+
+# %%
+def my_enumerate(iterable, start=0):
+    for e, i in my_zip(range(start, len(iterable)+start), iterable):
+        yield (e, i)
+
+
+
+# %%
+
+# Beispiel für `my_enumerate`
+colors = ['red', 'green', 'blue']
+
+enumerated_colors = my_enumerate(colors, start=1)
+
+for index, color in enumerated_colors:
+    print(index, color)
+
+# %% [markdown]
+# ## Generator Expressions
+#
+# Ähnlich zu List Comprehensions können wir Generator Expressions verwenden, um Generatoren zu erstellen.
+
+# %%
+# List Comprehension
+lc = [i**2 for i in range(20)]
+print("List Comprehension:", lc)
+print("Größe von lc:", getsizeof(lc), "Bytes")
+
+# Generator Expression
+ge = (i**2 for i in range(20))
+print("Generator Expression:", ge)
+print("Größe von ge:", getsizeof(ge), "Bytes")
+
+print("Quadratzahlen aus Generator Expression:")
+for num in ge:
+    print(num, end=" ")
+print()
+
+# %% [markdown]
+# **Erläuterung:**
+#
+# - Die List Comprehension erstellt sofort eine Liste mit allen Elementen.
+# - Die Generator Expression erzeugt die Elemente bei Bedarf und verbraucht weniger Speicher.
+
+
+
 
 
 # %% [markdown]
-# Durch das Schlüsselwort yield ist es uns möglich, einen Generator zu bauen, der beim Iterieren immer bis zum nächsten yield-Ausdruck läuft und diesen auswertet und zurückgibt. Wird das nächste Element verlangt, macht die Funktion genau an der Stelle weiter, an der sie das letzte Mal aufgehört hat, und läuft, bis sie auf den nächsten yield-Ausdruck stößt.
-# Auf diese Weise lassen sich die einzelnen Elemente komfortabel genau dann generieren, wenn sie gebraucht werden. Das verringert den Speicherbedarf enorm.
-# Diese Technik nennt sich lazy evaluation.
-
-# %%
-def my_map_g(function, iterable):
-    for e in iterable:
-        yield function(e)
-        
-getsizeof(my_map_g(lambda x: x**2, l))
-
-# %%
-for e in my_map_g(lambda x: x**2, l):
-    print(e, end=" ")
+# ## Einsatz von Generatoren für Lazy Evaluation
+#
+# **Lazy Evaluation** bedeutet, dass Berechnungen erst dann durchgeführt werden, wenn sie tatsächlich benötigt werden. Generatoren ermöglichen es uns, dieses Konzept in Python zu nutzen.
 
 # %% [markdown]
-# Die `my_map_g`-Funktion gibt als Rückgabe ein Generator-Objekt zurück, welches als Iterator verwendet werden kann. Ein Iterator implementiert die `__next__`-Methode, welche von der built-in Funktion `next` aufgerufen wird, um das Ergebnis des nächsten Iterationsschritts zu erhalten.
+# **Beispiel mit unendlicher Folge von Fibonacci-Zahlen:**
+#
+# Fibonacci-Zahlen sind eine berühmte Zahlenfolge, die aus der Summe der beiden vorherigen Zahlen gebildet wird. Die Folge beginnt mit 0 und 1, und jedes nachfolgende Element ist die Summe der vorhergehenden beiden. Also sind die ersten vier Fibonacci-Zahlen 0, 1, 1 und 2, gefolgt von 3, 5, 8 und so weiter.
+#
+# Durch den Einsatz von Lazy Evaluation mit Generatoren können wir diese unendliche Folge generieren, ohne unendlich viel Speicher zu benötigen. Wir können bei Bedarf jederzeit das nächste Element erzeugen.
 
 # %%
-g = my_map_g(lambda x: x*2, range(10))
-print(g)
+def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+fib_gen = fibonacci()
+
+# Ausgabe der ersten 20 Fibonacci-Zahlen
+for _ in range(20):
+    print(next(fib_gen), end=" ")
+print()
 
 # %% [markdown]
-# Führe die nächste Zelle mehrfach aus, um zu sehen, wie die `next`-Funktion immer das nächste Element zurückgibt.
-
-# %%
-next(g)
-
-# %% [markdown]
-# Wir können ein Generator-Objekt auch durch eine Comprehension, ähnlich der List-Comprehension, erzeugen. Hierfür müssen wir lediglich die umschließenden eckigen Klammern `[]` durch runde Klammern `()` ersetzen.
-
-# %%
-lc = [i/2 for i in range(10)]
-print(lc)
-gc = (i/2 for i in range(10))
-print(gc)
+# **Erläuterung:**
+#
+# - Die Funktion `fibonacci` erzeugt eine unendliche Zahlenfolge.
+# - Da die Zahlen bei Bedarf generiert werden, können wir theoretisch unendlich viele Elemente haben, ohne den Speicher zu überlasten.
 
 # %% [markdown]
-# Das Generator-Objekt kann nun ganz normal in einer For-Schleife verwendet werden.
+# ## Nachteile von Generatoren gegenüber Listen
+#
+# Generatoren sind speicher- und zeiteffizient, haben aber Nachteile gegenüber Listen:
+#
+# - **Nicht indexierbar**: Kein direkter Zugriff auf Elemente per Index.
+# - **Einmalige Iteration**: Nach vollständiger Durchlaufung erschöpft.
+# - **Unbekannte Länge**: `len()` funktioniert nicht, da Länge nicht definiert.
+# - **Kein zufälliger Zugriff**: Keine Möglichkeit, Elemente zu überspringen oder zurückzugehen.
+# - **Erschwertes Debugging**: Zustand schwer einsehbar.
+#
+# **Beispiele:**
 
 # %%
-for e in gc:
-    print(e)
+# Nicht indexierbar und Einmalige Iteration
+try:
+    my_generator = (x for x in range(5))
+    print("Indexzugriff:", my_generator[2])  # Fehler
+except TypeError as e:
+    print("Fehler:", e)
 
-# %% [markdown]
-# Auch hier lässt sich sehen, dass das Generator-Objekt deutlich Speichereffizienter ist als die entsprechende Liste.
+print()
 
-# %%
-print(getsizeof(lc))
-print(getsizeof(gc))
 
-# %% [markdown]
-# Generator-Comprehensions, die direkt einer Funktion übergeben werden brauchen keine extra Klammern, da die Klammern des Funktionsaufrufs bereits ausreichen um den Ausdruck auszuwerten.
+# Einmalige Iteration
+gen = (x for x in range(3))
+print("Erster Durchlauf:")
+for value in gen:
+    print(value)
+print("Zweiter Durchlauf:")
+for value in gen:
+    print(value)  # Keine Ausgabe
 
-# %%
-sum(i for i in range(10))
+print()
+
+# Unbekannte Länge
+try:
+    gen = (x for x in range(5))
+    print(len(gen))  # Fehler
+except TypeError as e:
+    print("Fehler:", e)
+
+
+print()
+
+# Kein zufälliger Zugriff
+gen = (x for x in range(5))
+next(gen)
+next(gen)
+try:
+    print(gen[0])  # Fehler
+except TypeError as e:
+    print("Fehler:", e)
 
 # %% [markdown]
 # ## Zusammenfassung
 #
-# 1. **Speicherbedarf von `range` und Listen**: Der Speicherbedarf für ein `range`-Objekt bleibt konstant, auch wenn die Länge steigt, während eine äquivalente Liste deutlich mehr Speicher benötigt.
+# 1. **Speicherbedarf von `range` und Listen**: `range`-Objekte speichern nur Start, Ende und Schrittweite und verbrauchen konstanten Speicher, während Listen alle Elemente im Speicher halten.
 #
-# 2. **`my_map_g`-Funktion**: Diese Funktion gibt ein Generator-Objekt zurück, das als Iterator verwendet werden kann. Ein Iterator implementiert die `__next__`-Methode, die von der built-in Funktion `next` aufgerufen wird, um das nächste Iterationsergebnis zu erhalten.
+# 2. **Iteratoren**: Objekte wie `map`, `zip` und `enumerate` geben Iteratoren zurück, die ihre Elemente bei Bedarf generieren.
 #
-# 3. **Verwendung von `next`**: Mehrfaches Aufrufen von `next` auf einem Generator-Objekt gibt jeweils das nächste Element zurück.
+# 3. **Generatoren**: Mit dem `yield`-Schlüsselwort können wir Generatoren erstellen, die Iteratoren sind und Lazy Evaluation ermöglichen.
 #
-# 4. **Generator-Comprehension**: Ein Generator-Objekt kann ähnlich wie eine List-Comprehension erzeugt werden, indem die eckigen Klammern `[]` durch runde Klammern `()` ersetzt werden.
+# 4. **Generator Expressions**: Ähnlich zu List Comprehensions, aber sie erzeugen Elemente bei Bedarf.
 #
-# 5. **Verwendung in For-Schleifen**: Das Generator-Objekt kann in einer For-Schleife wie eine normale Liste verwendet werden.
+# 5. **Lazy Evaluation**: Berechnungen werden erst durchgeführt, wenn sie benötigt werden, was Speicher und Rechenleistung spart.
