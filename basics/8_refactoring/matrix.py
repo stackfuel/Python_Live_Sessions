@@ -21,7 +21,6 @@ for i in range(9):
     print(row)
     if (i + 1) % 3 == 0 and i < 8:
         print('-' * 21)
-
 cells = [(i, j) for i in range(9) for j in range(9) if matrix[i][j] == 0]
 
 
