@@ -71,8 +71,6 @@ print("Größe des range-Objekts r:", getsizeof(r), "Bytes")
 # Die Liste `l` benötigt mehr Speicher als das `range`-Objekt `r`. Dies liegt daran, dass die Liste alle Elemente im Speicher hält, während das `range`-Objekt nur Start-, Endwert und Schrittweite speichern muss.
 
 # %% [markdown]
-# ## Einfluss der Größe auf den Speicherbedarf
-#
 # Schauen wir uns an, wie sich der Speicherbedarf ändert, wenn wir die Länge der iterierbaren Objekte erhöhen.
 
 # %%
@@ -93,9 +91,28 @@ print("Größe der Liste mit 1.000.000 Elementen:", getsizeof(large_list), "Byte
 # Die Funktion `getsizeof` misst nur die Größe des Objekts selbst und nicht den Speicherbedarf der einzelnen Elemente. Dennoch verdeutlicht dies den Unterschied zwischen den beiden Objekttypen.
 
 # %% [markdown]
-# ## Iterables und Iterators
+# ## Iterables und Iteratoren
 #
-# In Python sind **Iterables** Objekte, die nacheinander ihre Elemente zurückgeben können. Ein **Iterator** ist ein Objekt mit einer `__next__()`-Methode, die das nächste Element zurückgibt.
+# - **Iterables**: Ein Iterable ist ein Objekt, das eine `__iter__()`-Methode implementiert, die einen Iterator zurückgibt. Iterables sind Objekte, über die man in einer Schleife iterieren kann. Beispiele für eingebaute Iterable-Objekte in Python sind Listen, Tupel, Strings und Mengen.
+#
+# - **Iteratoren**: Ein Iterator ist ein Objekt, das die Methoden `__iter__()` und `__next__()` implementiert. Die Methode `__next__()` gibt das nächste Element des Iterators zurück und wirft eine `StopIteration`-Exception, wenn keine weiteren Elemente vorhanden sind.
+#
+# **Hinweis:** Dunder-Methoden (Double-underscore-Methoden) wie `__next__()` oder `__iter__()` werden in Python meist nicht direkt aufgerufen. Stattdessen greift man auf diese spezielle Funktionalität durch dafür vorgesehene Hilfsfunktionen oder Sprachkonstrukte zu. Beispielsweise verwendet man die eingebaute `next()`-Funktion, um das nächste Element von einem Iterator zu erhalten, anstatt direkt `iterator.__next__()` aufzurufen. Dies fördert klareren und lesbareren Code und nutzt die volle Flexibilität, die Python bietet.
+#
+# Bei der Iteration über ein Iterable in einer Schleife wird implizit ein Iterator erstellt, um die Iteration durchzuführen. Hier ist ein einfaches Beispiel:
+
+# %%
+# Einfache Liste als Iterable
+liste = [1, 2, 3]
+
+# Erstellen eines Iterators aus dem Iterable
+iterator = iter(liste)
+
+# Abrufen von Elementen mit einem Iterator
+print(next(iterator))  # Gibt 1 zurück
+print(next(iterator))  # Gibt 2 zurück
+print(next(iterator))  # Gibt 3 zurück
+#print(next(iterator))  # Wirft eine StopIteration Exeption
 
 # %% [markdown]
 # ## Funktionen, die Iteratoren zurückgeben
@@ -108,35 +125,30 @@ l = [1, 2, 3, 4, 5]
 # Verwenden von map
 m = map(lambda x: x**2, l)
 
-# Verwenden von zip
-z = zip(l, l)
-
-# Verwenden von enumerate
-e = enumerate(l)
-
 print("Typ von m:", type(m))
-print("Typ von z:", type(z))
-print("Typ von e:", type(e))
+print(next(m)) # Die erste Zahl außerhalb der for-Schleife
 
-# %% [markdown]
-# Alle diese Funktionen geben Iteratoren zurück, die ihre Elemente bei Bedarf generieren.
-
-# %%
-# Iterieren über die Iteratoren
-
-print("Ergebnisse von map:")
 for item in m:
     print(item, end=" ")
 print("\n")
 
-print("Ergebnisse von zip:")
+# %%
+# Verwenden von zip
+z = zip(l, l)
+
+print("Typ von z:", type(z))
 for item in z:
     print(item, end=" ")
 print("\n")
 
-print("Ergebnisse von enumerate:")
+# %%
+# Verwenden von enumerate
+e = enumerate(l)
+
+print("Typ von e:", type(e))
 for index, value in e:
     print(f"Index {index}: Wert {value}")
+
 
 # %% [markdown]
 # Die Iteratoren generieren ihre Elemente erst bei der Iteration. Dies spart Speicher, da nicht alle Elemente im Voraus berechnet werden.
@@ -212,7 +224,30 @@ print()
 # - Die Generatorfunktion `squares_generator` liefert die Quadratzahlen bei Bedarf und benötigt weniger Speicher.
 
 # %% [markdown]
-# ## Beispiele map, zip, enumeratre Implementierung
+# ### Beispiele map, zip, enumeratre Implementierung
+
+# %%
+def my_enumerate(iterable, start=0):
+    index = start
+    it = iter(iterable)
+    while True:
+        try:
+            yield (index, next(it))
+        except StopIteration:
+            return
+        index += 1
+
+
+# %%
+
+# Beispiel für `my_enumerate`
+colors = ['red', 'green', 'blue']
+
+enumerated_colors = my_enumerate(colors, start=1)
+
+for index, color in enumerated_colors:
+    print(index, color)
+
 
 # %%
 def my_zip(*iterables):
@@ -239,15 +274,12 @@ for item in zipped_result:
 
 
 # %%
-
 def my_map(f, *iteraples):
     for args in my_zip(*iteraples):
         yield f(*args)
 
 
-
 # %%
-
 # Beispiel für `my_map`
 def add(x, y):
     return x + y
@@ -260,26 +292,8 @@ mapped_result = my_map(add, list1, list2)
 for item in mapped_result:
     print(item)
 
-
-# %%
-def my_enumerate(iterable, start=0):
-    for e, i in my_zip(range(start, len(iterable)+start), iterable):
-        yield (e, i)
-
-
-
-# %%
-
-# Beispiel für `my_enumerate`
-colors = ['red', 'green', 'blue']
-
-enumerated_colors = my_enumerate(colors, start=1)
-
-for index, color in enumerated_colors:
-    print(index, color)
-
 # %% [markdown]
-# ## Generator Expressions
+# ### Generator Expressions
 #
 # Ähnlich zu List Comprehensions können wir Generator Expressions verwenden, um Generatoren zu erstellen.
 
@@ -299,15 +313,16 @@ for num in ge:
     print(num, end=" ")
 print()
 
+
 # %% [markdown]
 # **Erläuterung:**
 #
 # - Die List Comprehension erstellt sofort eine Liste mit allen Elementen.
 # - Die Generator Expression erzeugt die Elemente bei Bedarf und verbraucht weniger Speicher.
-
-
-
-
+#
+#
+#
+#
 
 # %% [markdown]
 # ## Einsatz von Generatoren für Lazy Evaluation
@@ -317,7 +332,31 @@ print()
 # %% [markdown]
 # **Beispiel mit unendlicher Folge von Fibonacci-Zahlen:**
 #
-# Fibonacci-Zahlen sind eine berühmte Zahlenfolge, die aus der Summe der beiden vorherigen Zahlen gebildet wird. Die Folge beginnt mit 0 und 1, und jedes nachfolgende Element ist die Summe der vorhergehenden beiden. Also sind die ersten vier Fibonacci-Zahlen 0, 1, 1 und 2, gefolgt von 3, 5, 8 und so weiter.
+# Fibonacci-Zahlen sind eine berühmte Zahlenfolge, die aus der Summe der beiden vorherigen Zahlen gebildet wird. Die Folge beginnt mit 0 und 1, und jedes nachfolgende Element ist die Summe der vorhergehenden beiden. 
+#
+# $$
+# F(n) = 
+# \begin{cases} 
+# 0, & \text{wenn } n = 0 \\
+# 1, & \text{wenn } n = 1 \\
+# F(n-1) + F(n-2), & \text{wenn } n > 1
+# \end{cases}
+# $$
+#
+# Dabei steht $ F(n) $ für die $ n $-te Fibonacci-Zahl.
+#
+#
+#
+# | $n$ | $F(n)$ |
+# |-----|--------|
+# |0    | 0      |
+# |1    | 1      |
+# |2    | 1      |
+# |3    | 2      |
+# |4    | 3      |
+# |5    | 5      |
+# |6    | 8      |
+# |7    |13      |
 #
 # Durch den Einsatz von Lazy Evaluation mit Generatoren können wir diese unendliche Folge generieren, ohne unendlich viel Speicher zu benötigen. Wir können bei Bedarf jederzeit das nächste Element erzeugen.
 
@@ -331,9 +370,11 @@ def fibonacci():
 fib_gen = fibonacci()
 
 # Ausgabe der ersten 20 Fibonacci-Zahlen
-for _ in range(20):
-    print(next(fib_gen), end=" ")
-print()
+print(f"{'n':>3} | {'F(n)':<5}")
+print("-"*11)
+
+for n, f in zip(range(20), fib_gen):
+    print(f"{n:>3} | {f:>5}")
 
 # %% [markdown]
 # **Erläuterung:**
