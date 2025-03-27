@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def get_sudoku_string(sudoku):
     """
     Prints a Sudoku board in a readable format.
@@ -7,26 +8,29 @@ def get_sudoku_string(sudoku):
     Args:
         sudoku (numpy.ndarray): A 2D array representing the Sudoku board, where 0 represents an empty cell.
     """
-    result = ""
+    if not isinstance(sudoku, np.ndarray):
+        raise TypeError("Input must be a numpy ndarray.")
+    if sudoku.shape != (9, 9):
+        raise ValueError("Input must be a 9x9 array.")
+
+    def format_row(row):
+        return " ".join(str(num) if num != 0 else '.' for num in row)
+
+    lines = []
     for i in range(9):
-        row = ''
-        for j in range(9):
-            row += str(sudoku[i][j]) if sudoku[i][j] != 0 else '.'
-            row += ' '
-            if (j + 1) % 3 == 0 and j < 8:
-                row += '| '
-        result = result + "\n" + row
-        if (i + 1) % 3 == 0 and i < 8:
-            result = result + "\n" + "-" * 21
-    return result
-            
-    
+        if i % 3 == 0 and i != 0:
+            lines.append("-" * 21)
+        row = " | ".join(format_row(sudoku[i, j:j+3]) for j in range(0, 9, 3))
+        lines.append(row)
+
+    return "\n".join(lines)
+        
 
 
 def is_valid(sudoku, number, position):
     """
     Check if a given number can be placed at a specific position on a Sudoku board.
-    
+
     Args:
         sudoku (numpy.ndarray): A 2D array representing the Sudoku board, where 0 represents an empty cell.
         number (int): The number to be placed on the board.
@@ -39,20 +43,20 @@ def is_valid(sudoku, number, position):
         return False
     if number in sudoku[:, col]:
         return False
-    
+
     # check 3x3 field
     start_row = 3 * (row // 3)
     start_col = 3 * (col // 3)
     if number in sudoku[start_row:start_row+3, start_col:start_col+3]:
         return False
-    
+
     return True
 
 
 def solve_sudoku(sudoku):
     """
     Solves a given Sudoku puzzle using a backtracking algorithm.
-    
+
     Args:
         sudoku (numpy.ndarray): A 2D array representing the Sudoku board, where 0 represents an empty cell.
     Returns:
@@ -60,29 +64,24 @@ def solve_sudoku(sudoku):
     Raises:
         ValueError: If no solution is found for the given Sudoku puzzle.
     """
-    sudoku = sudoku.copy()
-    empty_cells = [(i, j) for i in range(9) for j in range(9) if sudoku[i][j] == 0]
 
+    sudoku = sudoku.copy()
+    empty_cells = [(i, j) for i in range(9)
+                   for j in range(9) if sudoku[i][j] == 0]
     backtrack_index = 0
-    # go through all empty cells
     while backtrack_index < len(empty_cells):
         current_empty_cell = empty_cells[backtrack_index]
-        # go through all possible candidates
         for candidate in range(sudoku[current_empty_cell] + 1, 10):
-            # check if the candidate is valid
             if is_valid(sudoku, candidate, current_empty_cell):
-                sudoku[current_empty_cell] = candidate 
+                sudoku[current_empty_cell] = candidate
                 backtrack_index += 1
                 break
-        else:
-            # if no candidate is valid, go back to the
-            # previous cell and try another candidate
+        else:  # no valid candidate found
             sudoku[current_empty_cell] = 0
             backtrack_index -= 1
             if backtrack_index < 0:
                 raise ValueError("No solution found")
     return sudoku
-
 
 
 if __name__ == "__main__":
@@ -107,4 +106,3 @@ if __name__ == "__main__":
         print(get_sudoku_string(solved_board))
     except ValueError as e:
         print(str(e))
-            
