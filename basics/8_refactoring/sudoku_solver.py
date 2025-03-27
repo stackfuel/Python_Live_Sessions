@@ -66,20 +66,20 @@ def solve_sudoku(sudoku):
     current_cell_index = 0
     # go through all empty cells
     while current_cell_index < len(empty_cells):
-        row, col = empty_cells[current_cell_index]
-        number = sudoku[row][col] + 1
-        # go through all numbers
-        while number <= 9:
-            # check if the number is valid
-            if is_valid(sudoku, number, (row, col)):
-                sudoku[row][col] = number 
+        position = empty_cells[current_cell_index]
+        candidate = sudoku[position] + 1
+        # go through all candidates
+        while candidate <= 9:
+            # check if the candidate is valid
+            if is_valid(sudoku, candidate, position):
+                sudoku[position] = candidate 
                 current_cell_index += 1
                 break
-            number += 1
+            candidate += 1
         else:
-            # if no number is valid, go back to the
-            # previous cell and try another number
-            sudoku[row][col] = 0
+            # if no candidate is valid, go back to the
+            # previous cell and try another candidate
+            sudoku[position] = 0
             current_cell_index -= 1
             if current_cell_index < 0:
                 raise ValueError("No solution found")
