@@ -68,19 +68,17 @@ def solve_sudoku(sudoku):
     while current_cell_index < len(empty_cells):
         row, col = empty_cells[current_cell_index]
         number = sudoku[row][col] + 1
-        number_found = False
         # go through all numbers
         while number <= 9:
             # check if the number is valid
             if is_valid(sudoku, number, (row, col)):
                 sudoku[row][col] = number 
                 current_cell_index += 1
-                number_found = True
                 break
             number += 1
-        # if no number is valid, go back to the
-        # previous cell and try another number
-        if not number_found:
+        else:
+            # if no number is valid, go back to the
+            # previous cell and try another number
             sudoku[row][col] = 0
             current_cell_index -= 1
             if current_cell_index < 0:
