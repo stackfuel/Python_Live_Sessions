@@ -63,23 +63,23 @@ def solve_sudoku(sudoku):
     sudoku = sudoku.copy()
     empty_cells = [(i, j) for i in range(9) for j in range(9) if sudoku[i][j] == 0]
 
-    current_cell_index = 0
+    backtrack_index = 0
     # go through all empty cells
-    while current_cell_index < len(empty_cells):
-        position = empty_cells[current_cell_index]
+    while backtrack_index < len(empty_cells):
+        current_empty_cell = empty_cells[backtrack_index]
         # go through all possible candidates
-        for candidate in range(sudoku[position] + 1, 10):
+        for candidate in range(sudoku[current_empty_cell] + 1, 10):
             # check if the candidate is valid
-            if is_valid(sudoku, candidate, position):
-                sudoku[position] = candidate 
-                current_cell_index += 1
+            if is_valid(sudoku, candidate, current_empty_cell):
+                sudoku[current_empty_cell] = candidate 
+                backtrack_index += 1
                 break
         else:
             # if no candidate is valid, go back to the
             # previous cell and try another candidate
-            sudoku[position] = 0
-            current_cell_index -= 1
-            if current_cell_index < 0:
+            sudoku[current_empty_cell] = 0
+            backtrack_index -= 1
+            if backtrack_index < 0:
                 raise ValueError("No solution found")
     return sudoku
 
