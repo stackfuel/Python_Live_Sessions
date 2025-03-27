@@ -67,15 +67,13 @@ def solve_sudoku(sudoku):
     # go through all empty cells
     while current_cell_index < len(empty_cells):
         position = empty_cells[current_cell_index]
-        candidate = sudoku[position] + 1
-        # go through all candidates
-        while candidate <= 9:
+        # go through all possible candidates
+        for candidate in range(sudoku[position] + 1, 10):
             # check if the candidate is valid
             if is_valid(sudoku, candidate, position):
                 sudoku[position] = candidate 
                 current_cell_index += 1
                 break
-            candidate += 1
         else:
             # if no candidate is valid, go back to the
             # previous cell and try another candidate
