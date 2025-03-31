@@ -24,7 +24,6 @@ def get_sudoku_string(sudoku):
         lines.append(row)
 
     return "\n".join(lines)
-        
 
 
 def is_valid(sudoku, number, position):
@@ -38,19 +37,16 @@ def is_valid(sudoku, number, position):
     Returns:
         bool: True if the number can be placed at the given position without violating Sudoku rules, False otherwise.
     """
+    
     row, col = position
-    if number in sudoku[row, :]:
-        return False
-    if number in sudoku[:, col]:
-        return False
+    row_numbers = set(sudoku[row, :])
+    col_numbers = set(sudoku[:, col])
+    
+    start_row, start_col = 3 * (row // 3), 3 * (col // 3)
+    tile_numbers = set(sudoku[start_row:start_row+3,
+                       start_col:start_col+3].flatten())
 
-    # check 3x3 field
-    start_row = 3 * (row // 3)
-    start_col = 3 * (col // 3)
-    if number in sudoku[start_row:start_row+3, start_col:start_col+3]:
-        return False
-
-    return True
+    return number not in row_numbers | col_numbers | tile_numbers
 
 
 def solve_sudoku(sudoku):
