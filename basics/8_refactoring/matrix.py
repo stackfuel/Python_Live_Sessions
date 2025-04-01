@@ -13,16 +13,21 @@ matrix = np.array([
 ])
 
 print("before")
+lines = []
 for i in range(9):
-    row = ''
-    for j in range(9):
-        row += str(matrix[i][j]) if matrix[i][j] != 0 else '.'
-        row += ' '
-        if (j + 1) % 3 == 0 and j < 8:
-            row += '| '
-    print(row)
-    if (i + 1) % 3 == 0 and i < 8:
-        print('-' * 21)
+    if i % 3 == 0 and i != 0:
+        lines.append("-" * 21)
+
+    formatted_row = []
+    for j in range(0, 9, 3):
+        block = " ".join(str(num) if num !=
+                            0 else '.' for num in matrix[i, j:j+3])
+        formatted_row.append(block)
+
+    line = " | ".join(formatted_row)
+    lines.append(line)
+
+print("\n".join(lines))
 
 cells = [(i, j) for i in range(9) for j in range(9) if matrix[i][j] == 0]
 i = 0
@@ -53,13 +58,17 @@ while i < len(cells):
 print(found)
 if found:
     print("after")
+    lines = []
     for i in range(9):
-        row = ''
-        for j in range(9):
-            row += str(matrix[i][j]) if matrix[i][j] != 0 else '.'
-            row += ' '
-            if (j + 1) % 3 == 0 and j < 8:
-                row += '| '
-        print(row)
-        if (i + 1) % 3 == 0 and i < 8:
-            print('-' * 21)
+        if i % 3 == 0 and i != 0:
+            lines.append("-" * 21)
+
+        formatted_row = []
+        for j in range(0, 9, 3):
+            block = " ".join(str(num) if num !=
+                                0 else '.' for num in matrix[i, j:j+3])
+            formatted_row.append(block)
+
+        line = " | ".join(formatted_row)
+        lines.append(line)
+    print("\n".join(lines))
