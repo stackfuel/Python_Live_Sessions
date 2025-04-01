@@ -13,15 +13,18 @@ def get_sudoku_string(sudoku):
     if sudoku.shape != (9, 9):
         raise ValueError("Input must be a 9x9 array.")
 
-    def format_row(row):
-        return " ".join(str(num) if num != 0 else '.' for num in row)
-
     lines = []
     for i in range(9):
         if i % 3 == 0 and i != 0:
             lines.append("-" * 21)
-        row = " | ".join(format_row(sudoku[i, j:j+3]) for j in range(0, 9, 3))
-        lines.append(row)
+        
+        formatted_row = []
+        for j in range(0, 9, 3):
+            block = " ".join(str(num) if num != 0 else '.' for num in sudoku[i, j:j+3])
+            formatted_row.append(block)
+
+        line = " | ".join(formatted_row)
+        lines.append(line)
 
     return "\n".join(lines)
 
