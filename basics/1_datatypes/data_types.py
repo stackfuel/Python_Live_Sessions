@@ -65,6 +65,8 @@ print(f"Der Wert ist {meine_variable} und hat den Typ: {type(meine_variable)}")
 #
 # In Python gibt es mehrere grundlegende Datentypen, die als "primitiv" betrachtet werden können. Diese Typen bilden die Basis für komplexere Datenstrukturen und sind in der Standardbibliothek von Python enthalten. Im Folgenden lernen wir die wichtigsten primitiven Datentypen kennen und wie sie verwendet werden.
 #
+# **Hinweis**: In anderen Sprachen wie Java werden Datentypen, die keine Objekte darstellen, als primitive Datentypen bezeichnet. In Python ist dieser Ausdruck nicht ganz korrekt, da in Python alles ein Objekt ist. Der Einfachheit halber bezeichnen wir jedoch die Datentypen `bool`, `int`, `float`, `str` und `None` als primitiv.
+#
 # ### 2.1 Boolean (bool)
 # Ein Objekt vom Typ `bool` kann nur zwei Werte annehmen: `True` oder `False`. 
 #
@@ -81,16 +83,20 @@ print(f"Typ von wahr: {type(wahr)}")
 # %%
 # Logische Operationen mit Booleans
 print("\nLogische Operationen:")
-print(f"True and False: {True and False}")  # Logisches UND: Beide Bedingungen müssen wahr sein
-print(f"True or False: {True or False}")    # Logisches ODER: Eine Bedingung muss wahr sein
-print(f"not True: {not True}")              # Logische Negation: Kehrt den Wert um
+print(f"{True and False = }")  # Logisches UND: Beide Bedingungen müssen wahr sein
+print(f"{True or False = }")   # Logisches ODER: Eine Bedingung muss wahr sein
+print(f"{not True = }")        # Logische Negation: Kehrt den Wert um
+
+# %% [markdown]
+# **Hinweis:** Der sogenannte f-String in Python wird gebildet, indem wir ein kleines `f` vor einen String schreiben. `f"Hallo"` ist ein Beispiel für einen f-String. In solchen Strings können wir beliebige Python-Ausdrücke in geschweifte Klammern schreiben, die dann direkt von Python ausgewertet und in den String eingebettet werden. Schreiben wir ein `=`-Zeichen an das Ende des Ausdrucks, wird der Ausdruck selbst ebenfalls in den String integriert.
 
 # %%
 # Vergleichsoperatoren erzeugen Boolean-Werte
 print("\nVergleiche:")
-print(f"5 > 3: {5 > 3}")    # Größer als
-print(f"5 == 5: {5 == 5}")  # Gleich (Beachte den doppelten Gleichheitsoperator für Vergleiche)
-print(f"5 != 10: {5 != 10}") # Ungleich
+print(f"{5 > 3 = }")     # Größer als
+print(f"{5 == 5 = }")    # Gleich (Beachte den doppelten Gleichheitsoperator für Vergleiche)
+print(f"{5 == 10 = }")   # Ungleich
+print(f"{(5 != 10) = }") # Ungleich
 
 # %% [markdown]
 # Interessanterweise können in Python alle Objekte in einem Boolean-Kontext ausgewertet werden. Die Funktion `bool()` gibt den entsprechenden Boolean-Wert zurück. Einige Beispiele für Werte, die als `False` betrachtet werden:
@@ -110,12 +116,12 @@ print(f"5 != 10: {5 != 10}") # Ungleich
 # %%
 # Boolean-Konversion von verschiedenen Werten
 print("\nBoolean Konvertierung:")
-print(f"bool(0): {bool(0)}")
-print(f"bool(1): {bool(1)}")
-print(f"bool(''): {bool('')}")
-print(f"bool('Hallo'): {bool('Hallo')}")
-print(f"bool([]): {bool([])}")
-print(f"bool([1, 2]): {bool([1, 2])}")
+print(f"{bool(0) = }")
+print(f"{bool(1) = }")
+print(f"{bool('') = }")
+print(f"{bool('Hallo') = }")
+print(f"{bool([]) = }")
+print(f"{bool([1, 2]) = }")
 
 # %% [markdown]
 # ### 2.2 Integer (int)
@@ -131,26 +137,26 @@ negativ = -42
 gross = 10**20  # 10 hoch 20 - eine sehr große Zahl
 
 print("\nInteger-Beispiele:")
-print(f"positiv = {positiv}, Typ: {type(positiv)}")
-print(f"negativ = {negativ}, Typ: {type(negativ)}")
-print(f"gross = {gross}, Typ: {type(gross)}")
+print(f"{positiv = }, {type(positiv) = }")
+print(f"{negativ = }, {type(negativ) = }")
+print(f"{gross = }, {type(gross) = }")
 
 
 # %%
 # Integer-Operationen
 a, b = 10, 3
-print(f"{a=}")  # Kompakte Ausgabe des Variablennamens und -werts
-print(f"{b=}")
+print(f"{a = }")  # Kompakte Ausgabe des Variablennamens und -werts
+print(f"{b = }")
 print("\nInteger-Operationen:")
 
 
-print(f"a + b = {a + b}")  # Addition
-print(f"a - b = {a - b}")  # Subtraktion
-print(f"a * b = {a * b}")  # Multiplikation
-print(f"a / b = {a / b}")  # Division (Ergebnis ist float)
-print(f"a // b = {a // b}")  # Ganzzahlige Division (Abrunden zum nächsten ganzzahligen Wert)
-print(f"a % b = {a % b}")  # Modulo (Rest der ganzzahligen Division)
-print(f"a ** b = {a ** b}")  # Potenzierung (a hoch b)
+print(f"{a + b = }")         # Addition
+print(f"{a - b = }")         # Subtraktion
+print(f"{a * b = }")         # Multiplikation
+print(f"{a / b = }")         # Division (Ergebnis ist float)
+print(f"{a // b = }")        # Ganzzahlige Division (Abrunden zum nächsten ganzzahligen Wert)
+print(f"{a % b = }")         # Modulo (Rest der ganzzahligen Division)
+print(f"{a ** b = }")        # Potenzierung (a hoch b)
 
 # %% [markdown]
 # Integer in Python haben einige besondere Eigenschaften:
@@ -158,21 +164,6 @@ print(f"a ** b = {a ** b}")  # Potenzierung (a hoch b)
 # 1. **Unbegrenzte Präzision**: Python kann mit beliebig großen Zahlen umgehen, ohne dass ein Überlauf auftritt. Dies unterscheidet Python von Sprachen wie C oder Java, wo Integer eine feste Größe haben.
 #
 # 2. **Automatische Typkonvertierung**: Bei der Division zweier Integer (`/`) gibt Python standardmäßig einen Float zurück, während die ganzzahlige Division (`//`) einen Integer zurückgibt.
-#
-# 3. **Bitoperationen**: Integer unterstützen bitweise Operationen wie `&` (AND), `|` (OR), `^` (XOR), `~` (NOT), `<<` (Links-Shift) und `>>` (Rechts-Shift).
-
-# %%
-# Demonstration der Bitoperationen
-c, d = 10, 6  # In Binär: 10 = 1010, 6 = 0110
-print("\nBitweise Operationen:")
-print(f"c = {c} (Binär: {bin(c)})")
-print(f"d = {d} (Binär: {bin(d)})")
-print(f"c & d = {c & d} (Binär: {bin(c & d)})")  # Bitweises AND
-print(f"c | d = {c | d} (Binär: {bin(c | d)})")  # Bitweises OR
-print(f"c ^ d = {c ^ d} (Binär: {bin(c ^ d)})")  # Bitweises XOR
-print(f"~c = {~c} (Binär: {bin(~c)})")           # Bitweises NOT
-print(f"c << 1 = {c << 1} (Binär: {bin(c << 1)})")  # Links-Shift (multipliziert mit 2)
-print(f"c >> 1 = {c >> 1} (Binär: {bin(c >> 1)})")  # Rechts-Shift (dividiert durch 2)
 
 # %% [markdown]
 # ### 2.3 Float (float)
@@ -188,17 +179,11 @@ y = -0.001        # Negative Dezimalzahl
 z = 2.5e8         # Wissenschaftliche Notation: 2.5 * 10^8 = 250000000.0
 w = 1.23e-5       # Wissenschaftliche Notation für kleine Zahlen: 1.23 * 10^-5 = 0.0000123
 
-print(f"{x=}")
-print(f"{y=}")
-print(f"{z=}")
-print(f"{w=}")
-
-
-print("\nFloat-Beispiele:")
-print(f"x = {x}, Typ: {type(x)}")
-print(f"y = {y}, Typ: {type(y)}")
-print(f"z = {z}, Typ: {type(z)}")
-print(f"w = {w}, Typ: {type(w)}")
+# Nutzung der f-String-Debug-Syntax
+print(f"{x = }")
+print(f"{y = }")
+print(f"{z = }")
+print(f"{w = }")
 
 
 # %%
@@ -213,8 +198,8 @@ print(f"Float {f} zu Int: {i}")
 
 # Achtung bei Float-Arithmetik: Rundungsfehler können auftreten
 print("\nFloat-Präzision:")
-print(f"0.1 + 0.2 = {0.1 + 0.2}")  # Ergibt nicht exakt 0.3 wegen binärer Darstellung
-print(f"Ist 0.1 + 0.2 == 0.3? {0.1 + 0.2 == 0.3}")  # Wird 'False' sein!
+print(f"{0.1 + 0.2 = }")         # Ergibt nicht exakt 0.3 wegen binärer Darstellung
+print(f"{0.1 + 0.2 == 0.3 = }")  # Wird 'False' sein!
 
 # %% [markdown]
 # Der Rundungsfehler bei Floats ist ein wichtiges Konzept in der Programmierung. Wenn wir präzise Dezimalberechnungen benötigen, sollten wir das `decimal`-Modul von Python verwenden:
@@ -223,8 +208,8 @@ print(f"Ist 0.1 + 0.2 == 0.3? {0.1 + 0.2 == 0.3}")  # Wird 'False' sein!
 from decimal import Decimal
 
 print("\nMit dem Decimal-Modul:")
-print(f"Decimal('0.1') + Decimal('0.2') = {Decimal('0.1') + Decimal('0.2')}")
-print(f"Ist Decimal('0.1') + Decimal('0.2') == Decimal('0.3')? {Decimal('0.1') + Decimal('0.2') == Decimal('0.3')}")
+print(f"{Decimal('0.1') + Decimal('0.2') = }")
+print(f"{Decimal('0.1') + Decimal('0.2') == Decimal('0.3') = }")
 
 # %% [markdown]
 # Floats unterstützen alle arithmetischen Operationen wie Integer, bieten aber auch zusätzliche mathematische Funktionen über das `math`-Modul:
@@ -245,7 +230,7 @@ print(f"Abrunden von 4.7: {math.floor(4.7)}")
 # ### 2.4 String (str)
 # Strings sind Zeichenketten beliebiger länge. Sie sind eine Sequenz von Unicode-Zeichen und gehören damit eigentlich zu den Datenstrukturen, werden aber oft als primitive Datentypen behandelt.
 #
-# Strings werden für die Darstellung von Text, Namen, Codes, und anderen zeichenbasierten Informationen verwendet. Sie sind unveränderlich (immutable), d.h. einmal erstellt, kann ihr Inhalt nicht mehr geändert werden.
+# Strings werden für die Darstellung von Text, Namen, Codes, und anderen zeichenbasierten Informationen verwendet. Sie sind, wie alle primitiven Datentypen, **unveränderlich** (immutable), d.h. einmal erstellt, kann ihr Inhalt nicht mehr geändert werden.
 #
 # Strings können durch doppelte `"` oder einzelne `'` Anführungszeichen erzeugt werden. Für mehrzeilige Strings verwendet man dreifache Anführungszeichen `"""` oder `'''`.
 
@@ -289,7 +274,7 @@ trennlinie = "-" * 20
 rahmen = "+" + "-" * 18 + "+"
 print(trennlinie)
 print(rahmen)
-print("| " + "Python ist toll!".ljust(16) + " |")
+print("| " + "Python ist toll!" + " |")
 print(rahmen)
 
 # %% [markdown]
@@ -304,18 +289,18 @@ print(rahmen)
 # %%
 s = "Hallo Welt"
 
-print(f"{s=}")
-print(f"{s[0]=}")        # Erstes Zeichen (Index 0)
-print(f"{s[1]=}")        # Zweites Zeichen (Index 1)
-print(f"{s[2]=}")        # Drittes Zeichen (Index 2)
-print(f"{s[-1]=}")       # Letztes Zeichen
-print(f"{s[-2]=}")       # Vorletztes Zeichen
-print(f"{s[0:3]=}")      # Zeichen 0 bis 2 (Index 3 ist exklusiv)
-print(f"{s[0:-1]=}")     # Vom Anfang bis zum vorletzten Zeichen
-print(f"{s[0:]=}")       # Vom Anfang bis zum Ende (komplett)
-print(f"{s[:]=}")        # Der komplette String
-print(f"{s[::2]=}")      # Jedes zweite Zeichen
-print(f"{s[::-1]=}")     # Umgekehrter String (von hinten nach vorne)
+print(f"{s = }")
+print(f"{s[0] = }")        # Erstes Zeichen (Index 0)
+print(f"{s[1] = }")        # Zweites Zeichen (Index 1)
+print(f"{s[2] = }")        # Drittes Zeichen (Index 2)
+print(f"{s[-1] = }")       # Letztes Zeichen
+print(f"{s[-2] = }")       # Vorletztes Zeichen
+print(f"{s[0:3] = }")      # Zeichen 0 bis 2 (Index 3 ist exklusiv)
+print(f"{s[0:-1] = }")     # Vom Anfang bis zum vorletzten Zeichen
+print(f"{s[0:] = }")       # Vom Anfang bis zum Ende (komplett)
+print(f"{s[:] = }")        # Der komplette String
+print(f"{s[::2] = }")      # Jedes zweite Zeichen
+print(f"{s[::-1] = }")     # Umgekehrter String (von hinten nach vorne)
 
 # %% [markdown]
 # Der `in`-Operator prüft, ob ein Substring in einem String enthalten ist. `not in` prüft auf Nichtvorhandensein.
@@ -343,10 +328,10 @@ print(f"Länge eines Strings mit Leerzeichen: {len('   ')}")
 # %%
 s = "  Hallo Welt  "
 print(f"Original: '{s}'")
-print(f"{s.upper()=}")      # Alle Zeichen in Großbuchstaben
-print(f"{s.lower()=}")      # Alle Zeichen in Kleinbuchstaben
-print(f"{s.strip()=}")      # Entfernt Leerzeichen am Anfang und Ende
-print(f"{s.split()=}")      # Teilt den String an Leerzeichen und erstellt eine Liste
+print(f"{s.upper() = }")      # Alle Zeichen in Großbuchstaben
+print(f"{s.lower() = }")      # Alle Zeichen in Kleinbuchstaben
+print(f"{s.strip() = }")      # Entfernt Leerzeichen am Anfang und Ende
+print(f"{s.split() = }")      # Teilt den String an Leerzeichen und erstellt eine Liste
 
 # %% [markdown]
 # Hier sind weitere nützliche String-Methoden:
@@ -391,11 +376,11 @@ print(f"Typ des Rückgabewerts: {type(result)}")
 
 # %%
 # None in Vergleichen
-print(f"None == None: {None == None}")    # Gleichheitsprüfung
-print(f"None is None: {None is None}")    # Identitätsprüfung (bevorzugt für None)
+print(f"{None == None = }")    # Gleichheitsprüfung
+print(f"{None is None = }")    # Identitätsprüfung (bevorzugt für None)
 
 # None in Wahrheitswerten
-print(f"bool(None): {bool(None)}")       # None ist False in Boolean-Kontext
+print(f"{bool(None) = }")       # None ist False in Boolean-Kontext
 
 # None als Default-Parameter
 def greet(name=None):
