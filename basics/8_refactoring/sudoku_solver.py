@@ -17,10 +17,11 @@ def get_sudoku_string(sudoku):
     for i in range(9):
         if i % 3 == 0 and i != 0:
             lines.append("-" * 21)
-        
+
         formatted_row = []
         for j in range(0, 9, 3):
-            block = " ".join(str(num) if num != 0 else '.' for num in sudoku[i, j:j+3])
+            block = " ".join(str(num) if num !=
+                             0 else '.' for num in sudoku[i, j:j+3])
             formatted_row.append(block)
 
         line = " | ".join(formatted_row)
@@ -40,11 +41,11 @@ def is_valid(sudoku, number, position):
     Returns:
         bool: True if the number can be placed at the given position without violating Sudoku rules, False otherwise.
     """
-    
+
     row, col = position
     row_numbers = set(sudoku[row, :])
     col_numbers = set(sudoku[:, col])
-    
+
     start_row, start_col = 3 * (row // 3), 3 * (col // 3)
     tile_numbers = set(sudoku[start_row:start_row+3,
                        start_col:start_col+3].flatten())
