@@ -104,29 +104,73 @@ Die Advanced Sessions richten sich vorwiegend an Teilnehmende der Kurse "Weiterf
     - closures: Verschachtelte Funktionen und Speichern von Zuständen
     - wrap: Funktionen zur Erhaltung von Metadaten bei Verwendung von Dekoratoren
     - `@`-Syntax: Definieren und Anwenden von Dekoratoren zur Funktionserweiterung
+    - properties, classmethod, staticmethod 
 
 4. **OOP Intro**
     - Fraction Klasse Implementieren: Grundlagen der Objektorientierung anhand einer Bruchklasse
-    - Klassen, Objekte (Instanzen), `self`-Argument
-
-5. **OOP Grundlagen**
     - Attribute: Eigenschaften von Objekten
     - Methoden: Funktionen innerhalb von Klassen
-    - Dunder methods: Spezialmethoden für benutzerdefinierte Operationen
+    - Klassen, Objekte (Instanzen), `self`-Argument
+    - Special Methods: `__add__`, `__sub__` etc.
 
-6. **Erweiterte OOP Konzepte**
-    - Properties: Zugriffsmethoden für Attribute
-    - Classmethods: Methoden, die auf Klassenebene arbeiten
+5. **Data Model**
+    - callables: Objekte, die wie Funktionen aufgerufen werden können
+        - `__call__`: Implementierung von Funktionsaufrufen für Objekte
+    - iterables: Objekte, die iteriert werden können
+        - `__iter__`: Implementierung der Iteration für benutzerdefinierte Objekte
+        - `__next__`: Implementierung der nächsten Iteration für benutzerdefinierte Objekte
+        - generatoren: Erzeugung von Iteratoren mit `yield`
+    - containers: Objekte, die andere Objekte enthalten können
+    - sequence: Objekte, die eine geordnete Sammlung von Elementen darstellen
+        - `__getitem__`, `__setitem__`, `__delitem__`: Zugriff und Manipulation von Elementen in Sequenzen
+    - mapping: Objekte, die Schlüssel-Wert-Paare enthalten
+        - `__contains__`: Überprüfung der Zugehörigkeit von Schlüsseln in Mappings
+    - context manager: Objekte, die Ressourcen verwalten und freigeben
+        - `__enter__`, `__exit__`: Implementierung von Kontextmanagern für Ressourcenverwaltung
+        - @contextmanager: Dekorator zur Erstellung von Kontextmanagern
+    - numerische Typen: Implementierung von numerischen Operationen
+        - `__add__`, `__sub__`, `__mul__`, `__truediv__`: Implementierung von arithmetischen Operationen
+        - Vergleichsoperatoren: `__eq__`, `__lt__`, `__gt__` etc. für benutzerdefinierte Vergleiche
+
+    
+    - Hashing: `__hash__` und `__repr__` für benutzerdefinierte Hash-Funktionen und Repräsentationen
+    - `__str__`: Benutzerdefinierte String-Repräsentation von Objekten
+    - `__init__`: Konstruktor für die Initialisierung von Objekten
+    - `__new__`: Erzeugung neuer Instanzen von Klassen
+    - `__del__`: Aufräumarbeiten beim Löschen von Objekten
+
+6. **Vererbung/Komposition**
+    - Vererbung: Wiederverwendung von Eigenschaften und Methoden zwischen Klassen
+    - Super: Zugriff auf Methoden der Basisklasse
+    - Mehrfachvererbung: Vererbung von mehreren Basisklassen
+    - Komposition: Erstellen komplexer Objekte durch Kombinieren kleinerer Objekte
+    - Interfaces: Definition von Verträgen für Klassen
+    - Abstrakte Klassen: Definition von Basisklassen mit unvollständigen Implementierungen
+    - Polymorphismus: Verwendung von Objekten unterschiedlicher Klassen auf ähnliche Weise
+    - Duck Typing: Verwendung von Objekten basierend auf ihrem Verhalten statt ihrem Typ
+    - MRO (Method Resolution Order): Reihenfolge, in der Methoden aufgerufen werden
+
+7. **Erweiterte OOP Konzepte**
     - Dataclasses: Vereinfachte Klassen für Datenverwaltung
     - Enums: Vereinfachte Klassen für Aufzählungen
+    - Namedtuples: Unveränderliche, benannte Tupel für strukturierte Daten
+    - Defaultdict: Erweiterung von Dictionaries mit Standardwerten
+    - Counter: Zähler für die Häufigkeit von Elementen in Sammlungen
+    - Mixins: Wiederverwendbare Klassen für zusätzliche Funktionalität
+    - Metaclasses: Klassen, die Klassen erstellen und deren Verhalten steuern
 
-7. **Vererbung/Komposition**
-    - Vererbung: Wiederverwendung von Eigenschaften und Methoden zwischen Klassen
-    - Komposition: Erstellen komplexer Objekte durch Kombinieren kleinerer Objekte
+8. **Module und Pakete**
+    - Module: Organisation von Code in separate Dateien
+    - Pakete: Strukturierung von Modulen in Verzeichnissen
+    - Importieren von Modulen und Paketen
+    - Namensräume: Vermeidung von Namenskonflikten durch Module
+    - `__init__.py`: Initialisierung von Paketen
+
 
 8. **Unit Testing**
     - Einführung in das Schreiben und Ausführen von Unit Tests
     - Verwenden von Test-Frameworks wie unittest oder pytest zur Sicherstellung der Funktionalität
+
 
 
 
