@@ -49,7 +49,7 @@ class Vector2D:
     def angle_with(v1, v2):
         """Calculate the angle in radians between two vectors."""
         # Berechnen von Kosinus des Winkels
-        cos_angle = v1.dot_product(v2) / (v1.magnitude() * v2.magnitude())
+        cos_angle = v1.dot_product(v2) / (abs(v1) * abs(v2))
         
         # Einschränken auf den Bereich [-1, 1]
         cos_angle = max(-1, min(1, cos_angle))
