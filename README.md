@@ -91,29 +91,25 @@ Die Basic Sessions richten sich üblicherweise an die Teilnehmer der Data Analyt
 Die Advanced Sessions richten sich vorwiegend an Teilnehmende der Kurse "Weiterführende Programmierung" (WPP), "Objektorientierte Programmierung" (OOP) und "Data Science / Data Analytics Portfolio Projekt" (DPP). Es wird in zwei Sessions ein einfaches Programmiersetup vorgestellt (VSCode, uv, git), um den Teilnehmenden die Möglichkeit zu geben, die gelernten Inhalte direkt auf ihren eigenen Rechnern auszuführen. Das Setup ist vor allem für Teilnehmende des DPP unverzichtbar. Darauf folgen weitere Sessions zu tiefergehenden Python-Konzepten, insbesondere der objektorientierten Programmierung. Im Gegensatz zu den Basic-Themen wird in den Advanced Sessions überwiegend auf Skripte und Module statt auf Jupyter Notebooks gesetzt, um den Teilnehmenden ein realistisches Bild der Softwareentwicklung zu vermitteln.
 
 
-1. **Technisches Setup** (dpp)
+**Technisches Setup** (dpp)
     - Verwendung von virtuellen Umgebungen (uv) zur Abhängigkeitsverwaltung
     - Einführung in Visual Studio Code (vscode) für die Python-Entwicklung
 
-2. **Einführung in git** (dpp)
-    - Grundlagen der Versionskontrolle mit Git
-    - Grundlegende Befehle für Repository-Verwaltung und Zusammenarbeit
+**OOP Intro**
+    - Vector Klasse Implementieren: Grundlagen der Objektorientierung anhand einer Vector-Klasse
+    - Attribute: Eigenschaften von Objekten
+    - Methoden: Funktionen innerhalb von Klassen
+    - Klassen, Objekte (Instanzen), `self`-Argument
+    - Special Methods: `__add__`, `__sub__` etc.
 
-3. **Higher Order Functions und Dekoratoren**
+**Higher Order Functions und Dekoratoren**
     - args/kwargs: Arbeiten mit variabler Argumentanzahl
     - closures: Verschachtelte Funktionen und Speichern von Zuständen
     - wrap: Funktionen zur Erhaltung von Metadaten bei Verwendung von Dekoratoren
     - `@`-Syntax: Definieren und Anwenden von Dekoratoren zur Funktionserweiterung
     - properties, classmethod, staticmethod 
 
-4. **OOP Intro**
-    - Fraction Klasse Implementieren: Grundlagen der Objektorientierung anhand einer Bruchklasse
-    - Attribute: Eigenschaften von Objekten
-    - Methoden: Funktionen innerhalb von Klassen
-    - Klassen, Objekte (Instanzen), `self`-Argument
-    - Special Methods: `__add__`, `__sub__` etc.
-
-5. **Data Model**
+**Data Model**
     - callables: Objekte, die wie Funktionen aufgerufen werden können
         - `__call__`: Implementierung von Funktionsaufrufen für Objekte
     - iterables: Objekte, die iteriert werden können
@@ -132,14 +128,13 @@ Die Advanced Sessions richten sich vorwiegend an Teilnehmende der Kurse "Weiterf
         - `__add__`, `__sub__`, `__mul__`, `__truediv__`: Implementierung von arithmetischen Operationen
         - Vergleichsoperatoren: `__eq__`, `__lt__`, `__gt__` etc. für benutzerdefinierte Vergleiche
 
-    
     - Hashing: `__hash__` und `__repr__` für benutzerdefinierte Hash-Funktionen und Repräsentationen
     - `__str__`: Benutzerdefinierte String-Repräsentation von Objekten
     - `__init__`: Konstruktor für die Initialisierung von Objekten
     - `__new__`: Erzeugung neuer Instanzen von Klassen
     - `__del__`: Aufräumarbeiten beim Löschen von Objekten
 
-6. **Vererbung/Komposition**
+**Vererbung/Komposition**
     - Vererbung: Wiederverwendung von Eigenschaften und Methoden zwischen Klassen
     - Super: Zugriff auf Methoden der Basisklasse
     - Mehrfachvererbung: Vererbung von mehreren Basisklassen
@@ -150,7 +145,7 @@ Die Advanced Sessions richten sich vorwiegend an Teilnehmende der Kurse "Weiterf
     - Duck Typing: Verwendung von Objekten basierend auf ihrem Verhalten statt ihrem Typ
     - MRO (Method Resolution Order): Reihenfolge, in der Methoden aufgerufen werden
 
-7. **Erweiterte OOP Konzepte**
+**Erweiterte OOP Konzepte**
     - Dataclasses: Vereinfachte Klassen für Datenverwaltung
     - Enums: Vereinfachte Klassen für Aufzählungen
     - Namedtuples: Unveränderliche, benannte Tupel für strukturierte Daten
@@ -159,17 +154,22 @@ Die Advanced Sessions richten sich vorwiegend an Teilnehmende der Kurse "Weiterf
     - Mixins: Wiederverwendbare Klassen für zusätzliche Funktionalität
     - Metaclasses: Klassen, die Klassen erstellen und deren Verhalten steuern
 
-8. **Module und Pakete**
+
+### Optionale Themen
+**Unit Testing**
+    - Einführung in das Schreiben und Ausführen von Unit Tests
+    - Verwenden von Test-Frameworks wie unittest oder pytest zur Sicherstellung der Funktionalität
+
+**Einführung in git** (dpp)
+    - Grundlagen der Versionskontrolle mit Git
+    - Grundlegende Befehle für Repository-Verwaltung und Zusammenarbeit
+
+**Module und Pakete**
     - Module: Organisation von Code in separate Dateien
     - Pakete: Strukturierung von Modulen in Verzeichnissen
     - Importieren von Modulen und Paketen
     - Namensräume: Vermeidung von Namenskonflikten durch Module
     - `__init__.py`: Initialisierung von Paketen
-
-
-8. **Unit Testing**
-    - Einführung in das Schreiben und Ausführen von Unit Tests
-    - Verwenden von Test-Frameworks wie unittest oder pytest zur Sicherstellung der Funktionalität
 
 
 
