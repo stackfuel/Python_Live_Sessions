@@ -2,10 +2,6 @@
 
 from math import sqrt
 
-# def create_vector(x=0, y=0):
-#     """Create a vector represented as a tuple."""
-#     # x = v1[0], y = v1[1]
-#     return (x, y)
 
 def add(v1: tuple, v2: tuple) -> tuple:
     """Add two vectors."""
