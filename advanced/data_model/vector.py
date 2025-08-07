@@ -126,6 +126,32 @@ class Vector:
         """
         return f"<{', '.join(str(c) for c in self)}>"
 
+    @property
+    def components(self) -> tuple:
+        """
+        Return the components of the vector as an immutable tuple.
+
+        >>> v = Vector([1.0, 2.0, 3.0])
+        >>> v.components
+        (1.0, 2.0, 3.0)
+        >>> type(v.components)
+        <class 'tuple'>
+        """
+        return self._components
+
+    @components.setter
+    def components(self, value: Iterable[numbers.Real]) -> None:
+        """
+        Prevent setting components to maintain immutability.
+        Raises an error if an attempt is made to set components.
+
+        >>> v = Vector([1.0, 2.0, 3.0])
+        >>> v.components = [4.0, 5.0, 6.0]
+        Traceback (most recent call last):
+        TypeError: Vector objects are immutable and cannot be modified.
+        """
+        raise TypeError("Vector objects are immutable and cannot be modified.")
+
     # container protocol methods
     def __len__(self) -> int:
         """
