@@ -1,7 +1,6 @@
+# Python Live Sessions
 
 
-
-# Live Sessions
 Die Themen der Live Sessions sind in zwei Bereiche geteilt. Die Basics- und Advanced-Sessions laufen jeweils wöchentlich parallel zueinander.  
 
 Montags 13.30: Python Basics  
@@ -153,45 +152,5 @@ Die Advanced Sessions richten sich vorwiegend an Teilnehmende der Kurse "Weiterf
     - Counter: Zähler für die Häufigkeit von Elementen in Sammlungen
     - Mixins: Wiederverwendbare Klassen für zusätzliche Funktionalität
     - Metaclasses: Klassen, die Klassen erstellen und deren Verhalten steuern
-
-
-### Optionale Themen
-**Unit Testing**
-    - Einführung in das Schreiben und Ausführen von Unit Tests
-    - Verwenden von Test-Frameworks wie unittest oder pytest zur Sicherstellung der Funktionalität
-
-**Einführung in git** (dpp)
-    - Grundlagen der Versionskontrolle mit Git
-    - Grundlegende Befehle für Repository-Verwaltung und Zusammenarbeit
-
-**Module und Pakete**
-    - Module: Organisation von Code in separate Dateien
-    - Pakete: Strukturierung von Modulen in Verzeichnissen
-    - Importieren von Modulen und Paketen
-    - Namensräume: Vermeidung von Namenskonflikten durch Module
-    - `__init__.py`: Initialisierung von Paketen
-
-
-
-
-
-# Weiteres
-Themen die beim Brainstorming übrig geblieben sind.
-- scripte module und packages / Projektstruktur
-- data storytelling (teilweise schon in dan)
-- logging
-- Fehlerbehandlung / Debugging
-- Funktionale Programmierung
-- Design Patterns
-- APIs und Webdienste
-- asynchrone Programmierung
-- multiprocessing, threading
-- Arbeiten mit Dateien und Dateisystemen
-- Reguläre Ausdrücke
-- python executable (exe bauen)
-- gui programmierung
-
-
-
 
 
