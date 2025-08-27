@@ -5,7 +5,7 @@
 Willkommen zu den **Python Live Sessions** von StackFuel! Diese Sessions sind als **begleitendes, freiwilliges Angebot** für alle Teilnehmenden der StackFuel-Kurse konzipiert. Da die meisten Trainings auf Python aufbauen, vermitteln wir hier systematisch die grundlegenden Konzepte der Programmiersprache.
 
 Die Sessions sind in zwei parallele Bereiche unterteilt:
-- **Python Basics**: *Montags 13:30 Uhr* - Grundlagen für Data Analytics (DAN) und Data Science (DSC) Teilnehmer
+- **Python Basics**: *Montags 13:30 Uhr* - Grundlagen für Data Analytics (DAN) und Data Science (DSC) Teilnehmende
 - **Python Advanced**: *Donnerstags 13:30 Uhr* - Vertiefende Konzepte für Weiterführende Programmierung (WPP), Objektorientierte Programmierung (OOP) und Data Science Portfolio Projekt (DPP) Teilnehmer
 
 Jede Live Session dauert **ca. 1 Stunde** und behandelt ein konkretes Thema. Die Basics-Sessions verwenden *Jupyter Notebooks*, während die Advanced-Sessions auch mit *Python-Skripten und Modulen* arbeiten, um ein realistisches Bild der Softwareentwicklung zu vermitteln.
@@ -33,10 +33,10 @@ Für die optimale Teilnahme an den Sessions empfehlen wir:
 - [2. Einfache Datenstrukturen](#2-einfache-datenstrukturen)
 - [3. Kontrollstrukturen](#3-kontrollstrukturen)
 - [4. Funktionen](#4-funktionen)
-- [7. Iteratoren, Generatoren und Lazy Evaluation](#7-iteratoren-generatoren-und-lazy-evaluation)
-- [5. Algorithmen](#5-algorithmen)
-- [8. Code-Qualität und Refactoring](#8-code-qualität-und-refactoring)
-- [6. Erweiterte Python Syntax (Syntactic Sugar)](#6-erweiterte-python-syntax-syntactic-sugar)
+- [5. Iteratoren, Generatoren und Lazy Evaluation](#5-iteratoren-generatoren-und-lazy-evaluation)
+- [6. Algorithmen](#6-algorithmen)
+- [7. Code-Qualität und Refactoring](#7-code-qualität-und-refactoring)
+- [8. Erweiterte Python Syntax (Syntactic Sugar)](#8-erweiterte-python-syntax-syntactic-sugar)
  
 ### Python Advanced Sessions
 - [1. Technisches Setup](#1-technisches-setup)
@@ -58,19 +58,18 @@ Die Basics Sessions vermitteln die fundamentalen Sprachkonstrukte von Python, di
 
 Diese Session führt in die grundlegenden Datentypen von Python ein, die das Fundament für alle weiteren Programmierkonzepte bilden.
 
+- **Expressions**: Ausdrücke und deren Auswertung
+- **Variablen**: Speicherung und Benennung von Werten
 - **`bool`**: Wahrheitswerte für logische Aussagen
 - **`int`**: Ganzzahlen ohne Dezimalstellen
 - **`float`**: Gleitkommazahlen für mathematische Berechnungen
 - **`str`**: Zeichenketten für Textdaten
 - **`None`**: Spezieller Typ für nicht vorhandene Werte
-- **Expressions**: Ausdrücke und deren Auswertung
-- **Variablen**: Speicherung und Benennung von Werten
-- **Zuweisungen**: Wertzuweisung an Variablen
-- **Operatoren**: Mathematische und logische Operationen
+
 
 ### 2. Einfache Datenstrukturen
 
-Hier lernen Sie die wichtigsten Datenstrukturen kennen, um mehrere Werte effizient zu organisieren und zu verwalten.
+Hier lernst du die wichtigsten Datenstrukturen kennen, um mehrere Werte effizient zu organisieren und zu verwalten.
 
 - **`tuple`**: Unveränderliche, geordnete Sammlung von Elementen
 - **`list`**: Änderbare, geordnete Sammlung von Elementen
@@ -89,7 +88,6 @@ Kontrollstrukturen ermöglichen es, den Programmfluss zu steuern und komplexere 
 - **`while`**: Wiederholung von Codeblöcken solange Bedingungen wahr sind
 - **`for`**: Iteration über Elemente von Sequenzen
 - **`break/continue`**: Unterbrechung und Fortsetzung von Schleifen
-- **`try/except/finally`**: Fehlerbehandlung und Ausnahmeverarbeitung
 
 ### 4. Funktionen
 
@@ -99,29 +97,46 @@ Funktionen sind essentiell für die Strukturierung und Wiederverwendung von Code
 - **`return`**: Rückgabe eines Wertes aus einer Funktion
 - **Funktionsaufrufe**: Ausführung definierter Funktionen
 - **Parameter/Argumente**: Übergabe von Werten an Funktionen
-  - *Named Parameters*: Benannte Parameterübergabe
   - *Default-Werte*: Standardwerte für Parameter
-- **Namespaces**: Gültigkeitsbereiche von Variablen
-  - *Globale vs. lokale Variablen* (**niemals `global` verwenden!**)
+  - *Positional Parameters*: Positionelle Parameterübergabe
+  - *Named Parameter*: Bennante Parameterübergabe
+- **Funktionen Höherer Ordnung**: eingebaute Funktionen in Python
 
-### 5. Algorithmen
+### 5. Iteratoren, Generatoren und Lazy Evaluation
+
+Hier lernst du effiziente Methoden zur Verarbeitung großer Datenmengen und speicherschonende Programmierung kennen.
+
+- **Iteratoren**: Objekte für schrittweise Durchlaufung von Sequenzen
+- **Generatoren**: Speicher-effiziente Ergebniserzeugung mit `yield`
+- **Generator Comprehensions**: Kompakte Generator-Erstellung
+- **Built-in Funktionen für Iteration**:
+  - `range`, `map`, `filter`, `zip`
+  - `enumerate`, `reversed`
+
+### 6. Algorithmen
 
 Diese Session führt in algorithmisches Denken ein und zeigt, wie komplexere Probleme systematisch gelöst werden können.
 
 - **Algorithmische Problemlösung**: Strukturierte Herangehensweise an Programmieraufgaben
+- **Praktische Implementierungen**: *Euklidischer Algorithmus*
 - **Klassische Algorithmen**: Sortier- und Suchalgorithmen als Beispiele
-- **Praktische Implementierungen**:
-  - *Euklidischer Algorithmus*
 - **Rekursion**: Funktionen, die sich selbst aufrufen
 
-### 6. Erweiterte Python Syntax (Syntactic Sugar)
+### 7. Code-Qualität und Refactoring
+
+Diese Session behandelt Best Practices für professionelle Python-Entwicklung.
+
+- **PEP 8**: Der offizielle Style Guide für Python-Code
+- **Namenskonventionen**: Best Practices für aussagekräftige Bezeichner
+- **Dokumentation**: Schreiben verständlicher und nützlicher Code-Dokumentation
+- **Code-Refactoring**: Verbesserung bestehenden Codes ohne Funktionsänderung
+- **Praktisches Projekt**: *Sudoku-Implementierung* zur Anwendung aller gelernten Konzepte
+
+### 8. Erweiterte Python Syntax (Syntactic Sugar)
 
 Diese Session stellt elegante Python-Sprachkonstrukte vor, die Code kompakter und lesbarer machen.
 
 - **Comprehensions**: Elegante Erzeugung von Datenstrukturen
-  - *List Comprehensions*
-  - *Dict Comprehensions*
-  - *Set Comprehensions*
 - **Lambda-Funktionen**: Kurzdefinition anonymer Funktionen
 - **Context Manager**: Ressourcenmanagement mit `with`-Statement
 - **Tuple Unpacking**: Entpacken von Tupeln und der `*`-Operator
@@ -133,27 +148,9 @@ Diese Session stellt elegante Python-Sprachkonstrukte vor, die Code kompakter un
   - *Structural Pattern Matching*: `match`-`case` Statements
   - *Type Hints*: Typannotationen für bessere Code-Dokumentation
 
-### 7. Iteratoren, Generatoren und Lazy Evaluation
 
-Hier lernen Sie effiziente Methoden zur Verarbeitung großer Datenmengen und speicherschonende Programmierung kennen.
 
-- **Iteratoren**: Objekte für schrittweise Durchlaufung von Sequenzen
-- **Generatoren**: Speicher-effiziente Ergebniserzeugung mit `yield`
-- **Generator Comprehensions**: Kompakte Generator-Erstellung
-- **Built-in Funktionen für Iteration**:
-  - `range`, `map`, `filter`, `zip`
-  - `enumerate`, `reversed`
-- **itertools-Modul**: Erweiterte Funktionen für Iteration und Datenmanipulation
 
-### 8. Code-Qualität und Refactoring
-
-Diese abschließende Session behandelt Best Practices für professionelle Python-Entwicklung.
-
-- **PEP 8**: Der offizielle Style Guide für Python-Code
-- **Namenskonventionen**: Best Practices für aussagekräftige Bezeichner
-- **Dokumentation**: Schreiben verständlicher und nützlicher Code-Dokumentation
-- **Code-Refactoring**: Verbesserung bestehenden Codes ohne Funktionsänderung
-- **Praktisches Projekt**: *Sudoku-Implementierung* zur Anwendung aller gelernten Konzepte
 
 
 ## Python Advanced Sessions
