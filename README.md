@@ -1,156 +1,285 @@
 # Python Live Sessions
 
+## Einleitung
 
-Die Themen der Live Sessions sind in zwei Bereiche geteilt. Die Basics- und Advanced-Sessions laufen jeweils wöchentlich parallel zueinander.  
+Willkommen zu den **Python Live Sessions** von StackFuel! Diese Sessions sind als **begleitendes, freiwilliges Angebot** für alle Teilnehmenden der StackFuel-Kurse konzipiert. Da die meisten Trainings auf Python aufbauen, vermitteln wir hier systematisch die grundlegenden Konzepte der Programmiersprache.
 
-Montags 13.30: Python Basics  
-Donnerstags 13.30: Python Advanced  
+Die Sessions sind in zwei parallele Bereiche unterteilt:
+- **Python Basics**: *Montags 13:30 Uhr* - Grundlagen für Data Analytics (DAN) und Data Science (DSC) Teilnehmende
+- **Python Advanced**: *Donnerstags 13:30 Uhr* - Vertiefende Konzepte für Weiterführende Programmierung (WPP), Objektorientierte Programmierung (OOP) und Data Science Portfolio Projekt (DPP) Teilnehmer
 
-Live Sessions dauern ca. 1,5 - 2 Stunden und behandeln ein konkretes Thema. Für die einzelnen Sessions gibt es Jupyter Notebooks (Basics) bzw. Python-Skripte (Advanced) in den jeweiligen Unterordnern. Die Sessions dienen als begleitendes, freiwilliges Angebot für die Teilnehmer aller StackFuel-Kurse. Da die meisten Trainings auf der Programmiersprache Python aufbauen, werden hier grundlegende Konzepte der Sprache vermittelt. Dabei handelt es sich um Themen zur Kernsprache selbst. Bibliotheken wie sklearn, numpy, matplotlib etc. werden in den Trainings bzw. anderen Sessions behandelt.
+Jede Live Session dauert **ca. 1 Stunde** und behandelt ein konkretes Thema. Die Basics-Sessions verwenden *Jupyter Notebooks*, während die Advanced-Sessions auch mit *Python-Skripten und Modulen* arbeiten, um ein realistisches Bild der Softwareentwicklung zu vermitteln.
 
-## Basics Sessions (DAN, DSC)
-Die Basic Sessions richten sich üblicherweise an die Teilnehmer der Data Analytics (DAN) und Data Science (DSC) Kurse. Es werden die grundlegenden Sprachkonstrukte vermittelt, die für die Datenanalyse nötig sind. Die Sessions sind freiwillig und können von den Teilnehmenden bei Interesse besucht werden. Allerdings bauen die Konzepte stark aufeinander auf, sodass es sinnvoll ist, die Sessions regelmäßig zu besuchen.
-
-1. **Einfache Datentypen**
-
-    Einführung in die grundlegenden Datentypen von Python.
-    
-    - `bool`: Wahrheitswerte für logische Aussagen
-    - `int`: Ganzzahlen ohne Dezimalstellen
-    - `float`: Gleitkommazahlen für mathematische Berechnungen
-    - `str`: Zeichenketten für Textdaten
-    - `None`: Spezieller Typ für nicht vorhandene Werte
-    - expressions
-    - variablen
-    - zuweisungen
-    - operatoren
-
-2. **Einfache Datenstrukturen**
-    - `tuple`: Unveränderliche, geordnete Sammlung von Elementen
-    - `list`: Änderbare, geordnete Sammlung von Elementen
-    - `set`: Ungeordnete Sammlung von eindeutigen Elementen
-    - `dict`: Sammlung von Schlüssel-Wert-Paaren
-    - eigenschaften
-        - iterable
-        - mutable vs. imutable
-
-3. **Kontrollstrukturen**
-    - `if/else`: Bedingte Ausführung von Codeblöcken
-    - `pass`: ...
-    - `while`: Wiederholung von Codeblöcken solange Bedingungen wahr sind
-    - `break/continue`: Unterbrechung von Schleifen
-    - `try/except/finally`: Fehlerbehandlung und Ausnahmeverarbeitung
-    - `for`: Iteration über Elemente von Sequenzen
-
-4. **Grundlagen Funktionen**
-    - `def`: Definition von Funktionen zur Wiederverwendung von Code
-    - `return`: Rückgabe eines Wertes aus einer Funktion
-    - Funktionen Aufrufen
-    - parameter/argumente: Übergabe von Werten an Funktionen
-        - named Parameter und Default-Werte
-    - name spaces
-        - globale vs. lokale variablen (niemals global verwenden!!!)
+**Wichtiger Hinweis:** Die Konzepte bauen stark aufeinander auf - ein regelmäßiger Besuch der Sessions ist daher empfehlenswert.
 
 
-5. **Algorithmen**
-    - Einführung in die Problemlösung mit algorithmischen Ansätzen
-    - Beispiele bekannter Algorithmen (z.B. Sortier- und Suchalgorithmen)
-    - Euklidischer Algorithmus, Primzahlen Generator
-    - Laufzeitverhalten von Algorithmen bewerten
-    - rekursion 
+## Empfohlene Entwicklungsumgebung
 
-6. **Erweiterte Python Syntax (Syntactic Sugar)**
-    - list-, dict-, set-comprehensions: Erzeugung von Datenstrukturen auf elegante Weise
-    - lambda funktionen: Kurzdefinition anonymer Funktionen
-    - with statement und context manager: Ressourcenmanagement und -freigabe
-    - tuple unpacking / *-Operatoren
-    - f-strings und string formatting
-    - ternary Operator: `x if condition else y`
-    - Walrus-Operator `:=`: Variablenzuweisung innerhalb von Expressions
-    - Chaining von Vergleichsoperatoren - `a < b < c` statt `a < b and b < c` und logischen Operatoren operatorreihenfolge
-    - Structural Pattern Matching `match`-`case`
-    - Type Hints
+Die Notebooks und Python Scripte können im DataLab hochgeladen werden um die Inhalte nachzuarbeiten. Allerdings kann es dazu kommen, dass aufgrund von Versionskonflikten einige Funktionen nicht im DataLab verfügbar sind. Aus diesem Grund empfehlen wir eine eigene Entwicklungsumgebung mit aktuellen Paketen einzurichten.
 
-7. **Iteratoren, Generatoren und Lazy Evaluation**
-    - iteratoren: Objekt, das beim Iterieren über eine Sequenz hilft
-    - yield: Erzeugung von Generatoren zur schrittweisen Ergebnisproduktion
-    - generator comprehensions: Speicher-effiziente Erstellung von Generatoren
-    - range, map, filter, zip, enumerate, reversed: Integrierte Funktionen zur Iteration und Manipulation
-    - itertools: Modul mit iterativen Funktionen zur Kombination und Manipulation von Daten
+Für die optimale Teilnahme an den Sessions empfehlen wir:
 
-8. **Refactoring**
-    - PEP8: Style Guide für Python Code
-    - Namenskonventionen: Best Practices für Bezeichnernamen
-    - Dokumentation: Schreiben von verständlicher und nützlicher Dokumentation
-    - (Tests: Erstellung und Ausführung von Tests zur Sicherstellung der Codequalität)
-    - Sudoku Projekt: Praktisches Projekt zur Anwendung des gelernten Wissens
+- **IDE**: [Visual Studio Code](https://code.visualstudio.com/) mit Python-Extension - Professionelle Entwicklungsumgebung mit ausgezeichneter Python-Unterstützung
+- **Package Manager**: [uv](https://docs.astral.sh/uv/) - Moderner, schneller Python Package Manager für Dependency Management und virtuelle Umgebungen
+
+*Zu diesen Tools gibt es in der ersten Python Advanced Session eine Einführung.*
 
 
-## Advanced (WPP, OOP, DPP Vorbereitung)
-Die Advanced Sessions richten sich vorwiegend an Teilnehmende der Kurse "Weiterführende Programmierung" (WPP), "Objektorientierte Programmierung" (OOP) und "Data Science / Data Analytics Portfolio Projekt" (DPP). Es wird in zwei Sessions ein einfaches Programmiersetup vorgestellt (VSCode, uv, git), um den Teilnehmenden die Möglichkeit zu geben, die gelernten Inhalte direkt auf ihren eigenen Rechnern auszuführen. Das Setup ist vor allem für Teilnehmende des DPP unverzichtbar. Darauf folgen weitere Sessions zu tiefergehenden Python-Konzepten, insbesondere der objektorientierten Programmierung. Im Gegensatz zu den Basic-Themen wird in den Advanced Sessions überwiegend auf Skripte und Module statt auf Jupyter Notebooks gesetzt, um den Teilnehmenden ein realistisches Bild der Softwareentwicklung zu vermitteln.
+## Sessionübersicht
+
+### Python Basics Sessions
+
+- [1. Einfache Datentypen](#1-einfache-datentypen)
+- [2. Einfache Datenstrukturen](#2-einfache-datenstrukturen)
+- [3. Kontrollstrukturen](#3-kontrollstrukturen)
+- [4. Funktionen](#4-funktionen)
+- [5. Iteratoren, Generatoren und Lazy Evaluation](#5-iteratoren-generatoren-und-lazy-evaluation)
+- [6. Algorithmen](#6-algorithmen)
+- [7. Code-Qualität und Refactoring](#7-code-qualität-und-refactoring)
+- [8. Erweiterte Python Syntax (Syntactic Sugar)](#8-erweiterte-python-syntax-syntactic-sugar)
+ 
+### Python Advanced Sessions
+- [1. Technisches Setup](#1-technisches-setup)
+- [2. Objektorientierte Programmierung - Grundlagen](#2-objektorientierte-programmierung---grundlagen)
+- [3. Higher Order Functions und Dekoratoren](#3-higher-order-functions-und-dekoratoren)
+- [4. Python Data Model](#4-python-data-model)
+- [5. Vererbung und Komposition](#5-vererbung-und-komposition)
+- [6. Erweiterte OOP-Konzepte](#6-erweiterte-oop-konzepte)
+<!--- Error Handling Exeptions und Assert -->
+<!--- Unit Testing -->
 
 
-**Technisches Setup** (dpp)
-    - Verwendung von virtuellen Umgebungen (uv) zur Abhängigkeitsverwaltung
-    - Einführung in Visual Studio Code (vscode) für die Python-Entwicklung
 
-**OOP Intro**
-    - Vector Klasse Implementieren: Grundlagen der Objektorientierung anhand einer Vector-Klasse
-    - Attribute: Eigenschaften von Objekten
-    - Methoden: Funktionen innerhalb von Klassen
-    - Klassen, Objekte (Instanzen), `self`-Argument
-    - Special Methods: `__add__`, `__sub__` etc.
+## Python Basics Sessions
 
-**Higher Order Functions und Dekoratoren**
-    - args/kwargs: Arbeiten mit variabler Argumentanzahl
-    - closures: Verschachtelte Funktionen und Speichern von Zuständen
-    - wrap: Funktionen zur Erhaltung von Metadaten bei Verwendung von Dekoratoren
-    - `@`-Syntax: Definieren und Anwenden von Dekoratoren zur Funktionserweiterung
-    - properties, classmethod, staticmethod 
+Die Basics Sessions vermitteln die fundamentalen Sprachkonstrukte von Python, die für die Datenanalyse unerlässlich sind. Sie richten sich primär an Teilnehmende der **Data Analytics (DAN)** und **Data Science (DSC)** Kurse.
 
-**Data Model**
-    - callables: Objekte, die wie Funktionen aufgerufen werden können
-        - `__call__`: Implementierung von Funktionsaufrufen für Objekte
-    - iterables: Objekte, die iteriert werden können
-        - `__iter__`: Implementierung der Iteration für benutzerdefinierte Objekte
-        - `__next__`: Implementierung der nächsten Iteration für benutzerdefinierte Objekte
-        - generatoren: Erzeugung von Iteratoren mit `yield`
-    - containers: Objekte, die andere Objekte enthalten können
-    - sequence: Objekte, die eine geordnete Sammlung von Elementen darstellen
-        - `__getitem__`, `__setitem__`, `__delitem__`: Zugriff und Manipulation von Elementen in Sequenzen
-    - mapping: Objekte, die Schlüssel-Wert-Paare enthalten
-        - `__contains__`: Überprüfung der Zugehörigkeit von Schlüsseln in Mappings
-    - context manager: Objekte, die Ressourcen verwalten und freigeben
-        - `__enter__`, `__exit__`: Implementierung von Kontextmanagern für Ressourcenverwaltung
-        - @contextmanager: Dekorator zur Erstellung von Kontextmanagern
-    - numerische Typen: Implementierung von numerischen Operationen
-        - `__add__`, `__sub__`, `__mul__`, `__truediv__`: Implementierung von arithmetischen Operationen
-        - Vergleichsoperatoren: `__eq__`, `__lt__`, `__gt__` etc. für benutzerdefinierte Vergleiche
+### 1. Einfache Datentypen
 
-    - Hashing: `__hash__` und `__repr__` für benutzerdefinierte Hash-Funktionen und Repräsentationen
-    - `__str__`: Benutzerdefinierte String-Repräsentation von Objekten
-    - `__init__`: Konstruktor für die Initialisierung von Objekten
-    - `__new__`: Erzeugung neuer Instanzen von Klassen
-    - `__del__`: Aufräumarbeiten beim Löschen von Objekten
+Diese Session führt in die grundlegenden Datentypen von Python ein, die das Fundament für alle weiteren Programmierkonzepte bilden.
 
-**Vererbung/Komposition**
-    - Vererbung: Wiederverwendung von Eigenschaften und Methoden zwischen Klassen
-    - Super: Zugriff auf Methoden der Basisklasse
-    - Mehrfachvererbung: Vererbung von mehreren Basisklassen
-    - Komposition: Erstellen komplexer Objekte durch Kombinieren kleinerer Objekte
-    - Interfaces: Definition von Verträgen für Klassen
-    - Abstrakte Klassen: Definition von Basisklassen mit unvollständigen Implementierungen
-    - Polymorphismus: Verwendung von Objekten unterschiedlicher Klassen auf ähnliche Weise
-    - Duck Typing: Verwendung von Objekten basierend auf ihrem Verhalten statt ihrem Typ
-    - MRO (Method Resolution Order): Reihenfolge, in der Methoden aufgerufen werden
-
-**Erweiterte OOP Konzepte**
-    - Dataclasses: Vereinfachte Klassen für Datenverwaltung
-    - Enums: Vereinfachte Klassen für Aufzählungen
-    - Namedtuples: Unveränderliche, benannte Tupel für strukturierte Daten
-    - Defaultdict: Erweiterung von Dictionaries mit Standardwerten
-    - Counter: Zähler für die Häufigkeit von Elementen in Sammlungen
-    - Mixins: Wiederverwendbare Klassen für zusätzliche Funktionalität
-    - Metaclasses: Klassen, die Klassen erstellen und deren Verhalten steuern
+- **Expressions**: Ausdrücke und deren Auswertung
+- **Variablen**: Speicherung und Benennung von Werten
+- **`bool`**: Wahrheitswerte für logische Aussagen
+- **`int`**: Ganzzahlen ohne Dezimalstellen
+- **`float`**: Gleitkommazahlen für mathematische Berechnungen
+- **`str`**: Zeichenketten für Textdaten
+- **`None`**: Spezieller Typ für nicht vorhandene Werte
 
 
+### 2. Einfache Datenstrukturen
+
+Hier lernst du die wichtigsten Datenstrukturen kennen, um mehrere Werte effizient zu organisieren und zu verwalten.
+
+- **`tuple`**: Unveränderliche, geordnete Sammlung von Elementen
+- **`list`**: Änderbare, geordnete Sammlung von Elementen
+- **`set`**: Ungeordnete Sammlung von eindeutigen Elementen
+- **`dict`**: Sammlung von Schlüssel-Wert-Paaren
+- **Eigenschaften von Datenstrukturen**:
+  - *Iterable*: Durchlaufbare Objekte
+  - *Mutable vs. Immutable*: Änderbare vs. unveränderliche Datentypen
+
+### 3. Kontrollstrukturen
+
+Kontrollstrukturen ermöglichen es, den Programmfluss zu steuern und komplexere Logik zu implementieren.
+
+- **`if/else`**: Bedingte Ausführung von Codeblöcken
+- **`pass`**: Platzhalter für leere Codeblöcke
+- **`while`**: Wiederholung von Codeblöcken solange Bedingungen wahr sind
+- **`for`**: Iteration über Elemente von Sequenzen
+- **`break/continue`**: Unterbrechung und Fortsetzung von Schleifen
+
+### 4. Funktionen
+
+Funktionen sind essentiell für die Strukturierung und Wiederverwendung von Code. Diese Session vermittelt die Grundlagen der Funktionsdefinition und -verwendung.
+
+- **`def`**: Definition von Funktionen zur Wiederverwendung von Code
+- **`return`**: Rückgabe eines Wertes aus einer Funktion
+- **Funktionsaufrufe**: Ausführung definierter Funktionen
+- **Parameter/Argumente**: Übergabe von Werten an Funktionen
+  - *Default-Werte*: Standardwerte für Parameter
+  - *Positional Parameters*: Positionelle Parameterübergabe
+  - *Named Parameter*: Bennante Parameterübergabe
+- **Funktionen Höherer Ordnung**: eingebaute Funktionen in Python
+
+### 5. Iteratoren, Generatoren und Lazy Evaluation
+
+Hier lernst du effiziente Methoden zur Verarbeitung großer Datenmengen und speicherschonende Programmierung kennen.
+
+- **Iteratoren**: Objekte für schrittweise Durchlaufung von Sequenzen
+- **Generatoren**: Speicher-effiziente Ergebniserzeugung mit `yield`
+- **Generator Comprehensions**: Kompakte Generator-Erstellung
+- **Built-in Funktionen für Iteration**:
+  - `range`, `map`, `filter`, `zip`
+  - `enumerate`, `reversed`
+
+### 6. Algorithmen
+
+Diese Session führt in algorithmisches Denken ein und zeigt, wie komplexere Probleme systematisch gelöst werden können.
+
+- **Algorithmische Problemlösung**: Strukturierte Herangehensweise an Programmieraufgaben
+- **Praktische Implementierungen**: *Euklidischer Algorithmus*
+- **Klassische Algorithmen**: Sortier- und Suchalgorithmen als Beispiele
+- **Rekursion**: Funktionen, die sich selbst aufrufen
+
+### 7. Code-Qualität und Refactoring
+
+Diese Session behandelt Best Practices für professionelle Python-Entwicklung.
+
+- **PEP 8**: Der offizielle Style Guide für Python-Code
+- **Namenskonventionen**: Best Practices für aussagekräftige Bezeichner
+- **Dokumentation**: Schreiben verständlicher und nützlicher Code-Dokumentation
+- **Code-Refactoring**: Verbesserung bestehenden Codes ohne Funktionsänderung
+- **Praktisches Projekt**: *Sudoku-Implementierung* zur Anwendung aller gelernten Konzepte
+
+### 8. Erweiterte Python Syntax (Syntactic Sugar)
+
+Diese Session stellt elegante Python-Sprachkonstrukte vor, die Code kompakter und lesbarer machen.
+
+- **Comprehensions**: Elegante Erzeugung von Datenstrukturen
+- **Lambda-Funktionen**: Kurzdefinition anonymer Funktionen
+- **Context Manager**: Ressourcenmanagement mit `with`-Statement
+- **Tuple Unpacking**: Entpacken von Tupeln und der `*`-Operator
+- **String Formatting**: `f-strings` und erweiterte Formatierungsmöglichkeiten
+- **Moderne Python-Features**:
+  - *Ternary Operator*: `x if condition else y`
+  - *Walrus-Operator*: `:=` für Variablenzuweisung in Expressions
+  - *Chaining von Operatoren*: `a < b < c` statt `a < b and b < c`
+  - *Structural Pattern Matching*: `match`-`case` Statements
+  - *Type Hints*: Typannotationen für bessere Code-Dokumentation
+
+
+
+
+
+
+## Python Advanced Sessions
+
+Die Advanced Sessions vertiefen das Python-Wissen und behandeln fortgeschrittene Konzepte der objektorientierten Programmierung. Sie richten sich an Teilnehmende der Kurse **Weiterführende Programmierung (WPP)**, **Objektorientierte Programmierung (OOP)** und **Data Science Portfolio Projekt (DPP)**. Es sind aber alle interessierten Teilnehmenden willkommen.
+
+### 1. Technisches Setup
+
+Diese Session bereitet Sie auf professionelle Python-Entwicklung vor und ist **essentiell für DPP-Teilnehmer**.
+
+- **Visual Studio Code Setup**: Konfiguration der IDE für optimale Python-Entwicklung
+- **Virtuelle Umgebungen mit uv**: Moderne Abhängigkeitsverwaltung und Projekt-Isolation
+
+### 2. Objektorientierte Programmierung - Grundlagen
+
+Diese Session führt in die Grundkonzepte der objektorientierten Programmierung ein anhand einer praktischen Vector-Klassen-Implementierung.
+
+- **Klassen und Objekte**: Grundlegende OOP-Konzepte
+  - *Klassendefinition* und *Instanziierung*
+  - Das `self`-Argument verstehen
+- **Attribute**: Eigenschaften von Objekten
+- **Methoden**: Funktionen innerhalb von Klassen
+- **Special Methods**: Implementierung von Operatoren
+  - `__add__`, `__sub__`, `__mul__` etc. zum Überladen von Operatoren
+  - `__str__`, `__repr__` für String-Repräsentation
+- **Praktisches Projekt**: Vollständige Vector-Klasse mit mathematischen Operationen
+
+### 3. Higher Order Functions und Dekoratoren
+
+Diese Session behandelt fortgeschrittene Funktionskonzepte und die mächtige Decorator-Syntax von Python.
+
+- **Variable Argumentlisten**: Flexible Funktionsparameter
+  - `*args`: Variable Anzahl positionaler Argumente
+  - `**kwargs`: Variable Anzahl benannter Argumente
+- **Closures**: Verschachtelte Funktionen und Zustandsspeicherung
+- **Dekoratoren**: Funktionserweiterung mit `@`-Syntax
+  - Grundlagen der Decorator-Implementierung
+  - `functools.wraps`: Metadaten-Erhaltung
+- **Built-in Dekoratoren**:
+  - `@property`: Getter/Setter-Implementierung
+  - `@classmethod`: Klassenmethoden
+  - `@staticmethod`: Statische Methoden
+
+### 4. Python Data Model
+
+Diese Session erklärt, wie Sie eigene Klassen nahtlos in Python's Ökosystem integrieren können.
+
+- **Callable Objects**: `__call__` für funktionsähnliche Objekte
+- **Iteration Protocol**: 
+  - `__iter__` und `__next__` für eigene Iteratoren
+  - *Generator-Funktionen* mit `yield`
+- **Container Types**:
+  - **Sequences**: `__getitem__`, `__setitem__`, `__delitem__`
+  - **Mappings**: `__contains__` für Zugehörigkeitstests
+- **Context Managers**: Ressourcenverwaltung
+  - `__enter__` und `__exit__` implementieren
+  - `@contextmanager` Decorator
+- **Numerische Operationen**:
+  - Arithmetische Operatoren: `__add__`, `__sub__`, `__mul__`, `__truediv__`
+  - Vergleichsoperatoren: `__eq__`, `__lt__`, `__gt__` etc.
+- **Object Lifecycle**:
+  - `__init__`: Objekt-Initialisierung
+  - `__new__`: Instanz-Erzeugung  
+  - `__del__`: Aufräumarbeiten
+- **Hashing und Repräsentation**: `__hash__` für Hashable Objects
+
+### 5. Vererbung und Komposition
+
+Diese Session behandelt fortgeschrittene OOP-Konzepte für die Strukturierung komplexer Anwendungen.
+
+- **Vererbung**: Wiederverwendung und Erweiterung von Klassen
+  - `super()`: Zugriff auf Parent-Class-Methoden
+  - **Mehrfachvererbung**: Komplexe Klassenhierarchien
+  - **MRO** (Method Resolution Order): Methodenauflösung verstehen
+- **Komposition**: Alternative zu Vererbung durch Objektzusammensetzung
+
+
+### 6. Erweiterte OOP-Konzepte
+
+Diese abschließende Session stellt moderne Python-Features für elegante Klassendesigns vor.
+
+- **Dataclasses**: Vereinfachte Datenklassen mit `@dataclass`
+- **Enumerations**: Typisierte Konstanten mit `enum.Enum`
+- **Named Tuples**: Strukturierte, unveränderliche Datentypen
+- **Collections-Erweiterungen**:
+  - `defaultdict`: Dictionaries mit Standardwerten
+  - `Counter`: Automatische Häufigkeitszählung
+- **Mixin-Pattern**: Wiederverwendbare Funktionalität durch Mehrfachvererbung
+- **Metaclasses**: *"Classes that create classes"* - Fortgeschrittene Metaprogrammierung
+
+
+
+
+## Literaturempfehlungen
+
+### Für Python Basics Sessions
+
+**"Python Crash Course" von Eric Matthes**
+- Praktische Projekte und grundlegende Konzepte für Anfänger
+- Ideal für Sessions 1-4 (Datentypen bis Funktionen)
+
+**"Automate the Boring Stuff with Python" von Al Sweigart**
+- Automatisierung alltäglicher Aufgaben, sehr praxisorientiert
+- Kostenlos verfügbar unter [automatetheboringstuff.com](https://automatetheboringstuff.com/)
+- Perfekt für Sessions 3-6 (Kontrollstrukturen bis Syntactic Sugar)
+
+**"Python 3: Das umfassende Handbuch" von Ernesti & Kaiser**
+- Deutschsprachiges Standardwerk für systematische Lerner
+- Umfassende Abdeckung aller Basics Sessions (1-8)
+
+### Für Python Advanced Sessions
+
+**"Python Tricks: The Book" von Dan Bader**
+- Python-Idiome und Best Practices für Fortgeschrittene
+- Hervorragend für Dekoratoren, OOP-Grundlagen und Code-Qualität
+
+**"Effective Python" von Brett Slatkin**
+- 90 konkrete Tipps für besseren Python-Code
+- 
+
+**"Fluent Python" von Luciano Ramalho**
+- Tiefgehende Erläuterung fortgeschrittener Python-Konzepte
+- Unverzichtbar für tiefes Python-Verständnis (2. Auflage empfohlen)
+
+### Online-Ressourcen
+
+- **Python Documentation** ([docs.python.org](https://docs.python.org)) - Offizielle Referenz und Tutorials
+- **Real Python** ([realpython.com](https://realpython.com)) - Hochwertige Tutorials zu allen Themen
+- **PEP 8** - [Style Guide](https://peps.python.org/pep-0008/) for Python Code (essentiell für Code-Qualität)
+- **Raymond Hettinger PyCon Talks** ([YouTube](https://www.youtube.com/playlist?list=PLRVdut2KPAguz3xcd22i_o_onnmDKj3MA)) - Insights von Python Core Developern
+- **Codewars** ([codewars.com](https://www.codewars.com)) - Programmier-Challenges zur Übung
+- **LeetCode** ([leetcode.com](https://leetcode.com)) - Algorithmus- und Datenstruktur-Übungen
