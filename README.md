@@ -122,9 +122,9 @@ Diese Session führt in algorithmisches Denken ein und zeigt, wie komplexere Pro
 - **Klassische Algorithmen**: Sortier- und Suchalgorithmen als Beispiele
 - **Rekursion**: Funktionen, die sich selbst aufrufen
 
-### 7. Code-Qualität und Refactoring
+### 7. Refactoring und Code Qualität
 
-Diese Session behandelt Best Practices für professionelle Python-Entwicklung.
+*Ankündigung*: Lerne, wie du mithilfe von Refactoring und den PEP8-Konventionen deinen Python-Code klarer, konsistenter und wartbarer gestaltest – mit praktischen Beispielen rund um einen Sudoku-Löser. Diese Live-Session richtet sich an alle, die bereits Grundkenntnisse in Python haben und ihren Code auf das nächste Level bringen möchten.
 
 - **PEP 8**: Der offizielle Style Guide für Python-Code
 - **Namenskonventionen**: Best Practices für aussagekräftige Bezeichner
