@@ -282,4 +282,4 @@ Diese abschließende Session stellt moderne Python-Features für elegante Klasse
 - **PEP 8** - [Style Guide](https://peps.python.org/pep-0008/) for Python Code (essentiell für Code-Qualität)
 - **Raymond Hettinger PyCon Talks** ([YouTube](https://www.youtube.com/playlist?list=PLRVdut2KPAguz3xcd22i_o_onnmDKj3MA)) - Insights von Python Core Developern
 - **Codewars** ([codewars.com](https://www.codewars.com)) - Programmier-Challenges zur Übung
-- **LeetCode** ([leetcode.com](https://leetcode.com)) - Algorithmus- und Datenstruktur-Übungen
+- **LeetCode** ([leetcode.com](https://leetcode.com)) - Algorithmus- und Datenstruktur-Übungen 
