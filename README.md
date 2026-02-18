@@ -5,8 +5,8 @@
 Willkommen zu den **Python Live Sessions** von StackFuel! Diese Sessions sind als **begleitendes, freiwilliges Angebot** für alle Teilnehmenden der StackFuel-Kurse konzipiert. Da die meisten Trainings auf Python aufbauen, vermitteln wir hier systematisch die grundlegenden Konzepte der Programmiersprache.
 
 Die Sessions sind in zwei parallele Bereiche unterteilt:
-- **Python Basics**: *Montags 13:30 Uhr* - Grundlagen für Data Analytics (DAN) und Data Science (DSC) Teilnehmende
-- **Python Advanced**: *Donnerstags 13:30 Uhr* - Vertiefende Konzepte für Weiterführende Programmierung (WPP), Objektorientierte Programmierung (OOP) und Data Science Portfolio Projekt (DPP) Teilnehmer
+- **Python Basics**: Grundlagen für Data Analytics (DAN) und Data Science (DSC) Teilnehmende
+- **Python Advanced**: Vertiefende Konzepte für Weiterführende Programmierung (WPP), Objektorientierte Programmierung (OOP) und Data Science Portfolio Projekt (DPP) Teilnehmer
 
 Jede Live Session dauert **ca. 1 Stunde** und behandelt ein konkretes Thema. Die Basics-Sessions verwenden *Jupyter Notebooks*, während die Advanced-Sessions auch mit *Python-Skripten und Modulen* arbeiten, um ein realistisches Bild der Softwareentwicklung zu vermitteln.
 
