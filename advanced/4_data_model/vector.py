@@ -95,7 +95,7 @@ class Vector:
         Vector([])
         """
         components_list = list(components)
-        if not all(isinstance(c, numbers.Real) for c in components_list):
+        if any(not isinstance(c, numbers.Real) for c in components_list):
             raise TypeError("All components must be real numbers (int or float).")
         self._components = tuple(float(c) for c in components_list)
 
@@ -244,7 +244,7 @@ class Vector:
         """
         if not isinstance(other, Vector):
             return NotImplemented
-        return self._components == other._components
+        return math.isclose(abs(self), abs(other))
 
     def __lt__(self, other: "Vector") -> bool:
         """
