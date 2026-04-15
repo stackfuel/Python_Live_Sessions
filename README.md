@@ -44,9 +44,10 @@ Für die optimale Teilnahme an den Sessions empfehlen wir:
 - [3. Higher Order Functions und Dekoratoren](#3-higher-order-functions-und-dekoratoren)
 - [4. Python Data Model](#4-python-data-model)
 - [5. Vererbung und Komposition](#5-vererbung-und-komposition)
-- [6. Erweiterte OOP-Konzepte](#6-erweiterte-oop-konzepte)
-<!--- Error Handling Exeptions und Assert -->
-<!--- Unit Testing -->
+- [6. Fehlerbehandlung mit Exceptions](#6-fehlerbehandlung-mit-exceptions)
+- [7. Unit Testing](#7-unit-testing)
+- [8. Erweiterte OOP-Konzepte](#8-erweiterte-oop-konzepte)
+
 
 
 
@@ -243,8 +244,6 @@ Diese abschließende Session stellt moderne Python-Features für elegante Klasse
 - **Collections-Erweiterungen**:
   - `defaultdict`: Dictionaries mit Standardwerten
   - `Counter`: Automatische Häufigkeitszählung
-- **Mixin-Pattern**: Wiederverwendbare Funktionalität durch Mehrfachvererbung
-- **Metaclasses**: *"Classes that create classes"* - Fortgeschrittene Metaprogrammierung
 
 
 
