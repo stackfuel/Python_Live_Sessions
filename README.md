@@ -44,9 +44,10 @@ Für die optimale Teilnahme an den Sessions empfehlen wir:
 - [3. Higher Order Functions und Dekoratoren](#3-higher-order-functions-und-dekoratoren)
 - [4. Python Data Model](#4-python-data-model)
 - [5. Vererbung und Komposition](#5-vererbung-und-komposition)
-- [6. Erweiterte OOP-Konzepte](#6-erweiterte-oop-konzepte)
-<!--- Error Handling Exeptions und Assert -->
-<!--- Unit Testing -->
+- [6. Fehlerbehandlung mit Exceptions](#6-fehlerbehandlung-mit-exceptions)
+- [7. Unit Testing](#7-unit-testing)
+- [8. Erweiterte OOP-Konzepte](#8-erweiterte-oop-konzepte)
+
 
 
 
@@ -155,18 +156,18 @@ Diese Session stellt elegante Python-Sprachkonstrukte vor, die Code kompakter un
 
 ## Python Advanced Sessions
 
-Die Advanced Sessions vertiefen das Python-Wissen und behandeln fortgeschrittene Konzepte der objektorientierten Programmierung. Sie richten sich an Teilnehmende der Kurse **Weiterführende Programmierung (WPP)**, **Objektorientierte Programmierung (OOP)** und **Data Science Portfolio Projekt (DPP)**. Es sind aber alle interessierten Teilnehmenden willkommen.
+Die Advanced Sessions vertiefen das Python-Wissen und behandeln fortgeschrittene Konzepte der objektorientierten und funktionalen Programmierung. Sie richten sich an Teilnehmende der Kurse **Weiterführende Programmierung (WPP)**, **Objektorientierte Programmierung (OOP)** und **Portfolio Projekt (DPP)**. Es sind aber alle interessierten Teilnehmenden herzlich willkommen.
 
 ### 1. Technisches Setup
 
-Diese Session bereitet Sie auf professionelle Python-Entwicklung vor und ist **essentiell für DPP-Teilnehmer**.
+Diese Session bereitet Dich auf die professionelle arbeit mit Python vor, indem sie die Einrichtung einer modernen Entwicklungsumgebung und die Nutzung von virtuellen Umgebungen behandelt.
 
 - **Visual Studio Code Setup**: Konfiguration der IDE für optimale Python-Entwicklung
 - **Virtuelle Umgebungen mit uv**: Moderne Abhängigkeitsverwaltung und Projekt-Isolation
 
 ### 2. Objektorientierte Programmierung - Grundlagen
 
-Diese Session führt in die Grundkonzepte der objektorientierten Programmierung ein anhand einer praktischen Vector-Klassen-Implementierung.
+Diese Session führt in die Grundkonzepte der objektorientierten Programmierung ein. 
 
 - **Klassen und Objekte**: Grundlegende OOP-Konzepte
   - *Klassendefinition* und *Instanziierung*
@@ -176,20 +177,22 @@ Diese Session führt in die Grundkonzepte der objektorientierten Programmierung 
 - **Special Methods**: Implementierung von Operatoren
   - `__add__`, `__sub__`, `__mul__` etc. zum Überladen von Operatoren
   - `__str__`, `__repr__` für String-Repräsentation
-- **Praktisches Projekt**: Vollständige Vector-Klasse mit mathematischen Operationen
+
 
 ### 3. Higher Order Functions und Dekoratoren
 
-Diese Session behandelt fortgeschrittene Funktionskonzepte und die mächtige Decorator-Syntax von Python.
+Diese Session behandelt fortgeschrittene Funktionskonzepte und die Decorator-Syntax von Python.
 
 - **Variable Argumentlisten**: Flexible Funktionsparameter
   - `*args`: Variable Anzahl positionaler Argumente
   - `**kwargs`: Variable Anzahl benannter Argumente
+- **First-Class Functions**: Funktionen als Callables mit `__call__`-Methode
 - **Closures**: Verschachtelte Funktionen und Zustandsspeicherung
 - **Dekoratoren**: Funktionserweiterung mit `@`-Syntax
   - Grundlagen der Decorator-Implementierung
   - `functools.wraps`: Metadaten-Erhaltung
 - **Built-in Dekoratoren**:
+  - `@cache`: Memoization für Funktionen
   - `@property`: Getter/Setter-Implementierung
   - `@classmethod`: Klassenmethoden
   - `@staticmethod`: Statische Methoden
@@ -198,24 +201,15 @@ Diese Session behandelt fortgeschrittene Funktionskonzepte und die mächtige Dec
 
 Diese Session erklärt, wie Sie eigene Klassen nahtlos in Python's Ökosystem integrieren können.
 
-- **Callable Objects**: `__call__` für funktionsähnliche Objekte
+
 - **Iteration Protocol**: 
   - `__iter__` und `__next__` für eigene Iteratoren
-  - *Generator-Funktionen* mit `yield`
 - **Container Types**:
   - **Sequences**: `__getitem__`, `__setitem__`, `__delitem__`
   - **Mappings**: `__contains__` für Zugehörigkeitstests
-- **Context Managers**: Ressourcenverwaltung
-  - `__enter__` und `__exit__` implementieren
-  - `@contextmanager` Decorator
 - **Numerische Operationen**:
   - Arithmetische Operatoren: `__add__`, `__sub__`, `__mul__`, `__truediv__`
   - Vergleichsoperatoren: `__eq__`, `__lt__`, `__gt__` etc.
-- **Object Lifecycle**:
-  - `__init__`: Objekt-Initialisierung
-  - `__new__`: Instanz-Erzeugung  
-  - `__del__`: Aufräumarbeiten
-- **Hashing und Repräsentation**: `__hash__` für Hashable Objects
 
 ### 5. Vererbung und Komposition
 
@@ -228,7 +222,19 @@ Diese Session behandelt fortgeschrittene OOP-Konzepte für die Strukturierung ko
 - **Komposition**: Alternative zu Vererbung durch Objektzusammensetzung
 
 
-### 6. Erweiterte OOP-Konzepte
+### 6. Fehlerbehandlung mit Exceptions
+Diese Session vermittelt die Grundlagen der Fehlerbehandlung in Python, um robuste und fehlertolerante Anwendungen zu entwickeln.
+- **Exceptions**: Fehlerbehandlung mit `try/except`-Blöcken
+- **Eigene Exceptions**: Definition benutzerdefinierter Fehlertypen
+- **`assert`-Anweisungen**: Einfache Fehlerüberprüfung und Debugging-Hilfe
+
+### 7. Unit Testing
+Diese Session führt in die Praxis des Unit Testings ein, um die Qualität und Zuverlässigkeit von Python-Code sicherzustellen.
+- **Unittest Framework**: Einführung in das `pytest`-Modul
+- **Einfache Testfälle schreiben**: Strukturierung von Tests für Funktionen und Klassen
+- **Fixture und parametrisierte Tests**: Wiederverwendbare Testdaten und Testvariationen
+
+### 8. Erweiterte OOP-Konzepte
 
 Diese abschließende Session stellt moderne Python-Features für elegante Klassendesigns vor.
 
@@ -238,8 +244,6 @@ Diese abschließende Session stellt moderne Python-Features für elegante Klasse
 - **Collections-Erweiterungen**:
   - `defaultdict`: Dictionaries mit Standardwerten
   - `Counter`: Automatische Häufigkeitszählung
-- **Mixin-Pattern**: Wiederverwendbare Funktionalität durch Mehrfachvererbung
-- **Metaclasses**: *"Classes that create classes"* - Fortgeschrittene Metaprogrammierung
 
 
 
@@ -281,5 +285,6 @@ Diese abschließende Session stellt moderne Python-Features für elegante Klasse
 - **Real Python** ([realpython.com](https://realpython.com)) - Hochwertige Tutorials zu allen Themen
 - **PEP 8** - [Style Guide](https://peps.python.org/pep-0008/) for Python Code (essentiell für Code-Qualität)
 - **Raymond Hettinger PyCon Talks** ([YouTube](https://www.youtube.com/playlist?list=PLRVdut2KPAguz3xcd22i_o_onnmDKj3MA)) - Insights von Python Core Developern
+- **James Powell: So you want to be a Python expert? | PyData Seattle 2017** [YouTube](https://youtu.be/cKPlPJyQrt4?si=809g7Qkl9PNkGPX2) - Inspirierende Einblicke in fortgeschrittene Python-Konzepte
 - **Codewars** ([codewars.com](https://www.codewars.com)) - Programmier-Challenges zur Übung
 - **LeetCode** ([leetcode.com](https://leetcode.com)) - Algorithmus- und Datenstruktur-Übungen 
