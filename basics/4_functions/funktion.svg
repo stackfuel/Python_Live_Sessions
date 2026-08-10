@@ -1,0 +1,67 @@
+<svg viewBox="0 0 760 414" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="414" rx="20" fill="#0d1117"/>
+
+  <!-- obere Labels -->
+  <text x="64" y="40" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Schlüsselwort</text>
+  <text x="208" y="40" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Funktionsname</text>
+  <text x="408" y="40" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Parameter</text>
+
+  <!-- Klammern zu Zeile 1 -->
+  <path d="M40,52 L40,62 L88,62 L88,52" fill="none" stroke="#8b949e" stroke-width="2"/>
+  <path d="M64,62 L64,90" stroke="#8b949e" stroke-width="2"/>
+
+  <path d="M104,52 L104,62 L312,62 L312,52" fill="none" stroke="#8b949e" stroke-width="2"/>
+  <path d="M208,62 L208,90" stroke="#8b949e" stroke-width="2"/>
+
+  <path d="M328,52 L328,62 L488,62 L488,52" fill="none" stroke="#8b949e" stroke-width="2"/>
+  <path d="M408,62 L408,90" stroke="#8b949e" stroke-width="2"/>
+
+  <!-- Code Zeile 1: def function_name(parameters): -->
+  <text x="40" y="120" textLength="48" lengthAdjust="spacingAndGlyphs" font-family="'Fira Code','Consolas',monospace" font-size="26" font-weight="600" fill="#ff7b72">def</text>
+  <text x="104" y="120" textLength="208" lengthAdjust="spacingAndGlyphs" font-family="'Fira Code','Consolas',monospace" font-size="26" font-weight="600" fill="#d2a8ff">function_name</text>
+  <text x="312" y="120" textLength="16" lengthAdjust="spacingAndGlyphs" font-family="'Fira Code','Consolas',monospace" font-size="26" fill="#c9d1d9">(</text>
+  <text x="328" y="120" textLength="160" lengthAdjust="spacingAndGlyphs" font-family="'Fira Code','Consolas',monospace" font-size="26" font-weight="600" fill="#ffa657">parameters</text>
+  <text x="488" y="120" textLength="32" lengthAdjust="spacingAndGlyphs" font-family="'Fira Code','Consolas',monospace" font-size="26" fill="#c9d1d9">):</text>
+
+  <!-- Code Zeile 2: Docstring -->
+  <text x="104" y="168" textLength="384" lengthAdjust="spacingAndGlyphs" font-family="'Fira Code','Consolas',monospace" font-size="26" font-style="italic" fill="#79c0ff">"""Short description."""</text>
+
+  <!-- Docstring Label -->
+  <path d="M496,160 L514,160" stroke="#8b949e" stroke-width="2"/>
+  <text x="522" y="165" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Docstring</text>
+
+  <!-- Code Zeile 3: Kommentar -->
+  <text x="104" y="216" textLength="192" lengthAdjust="spacingAndGlyphs" font-family="'Fira Code','Consolas',monospace" font-size="26" font-style="italic" fill="#8b949e"># statements</text>
+
+  <!-- Code Zeile 4: return expression -->
+  <text x="104" y="264" textLength="96" lengthAdjust="spacingAndGlyphs" font-family="'Fira Code','Consolas',monospace" font-size="26" font-weight="600" fill="#ff7b72">return</text>
+  <text x="216" y="264" textLength="160" lengthAdjust="spacingAndGlyphs" font-family="'Fira Code','Consolas',monospace" font-size="26" fill="#79c0ff">expression</text>
+
+  <!-- Klammer Funktionskörper (rechts, Zeile 3+4) -->
+  <path d="M306,196 L460,196 L460,270 L386,270" fill="none" stroke="#8b949e" stroke-width="2"/>
+  <path d="M460,233 L480,233" stroke="#8b949e" stroke-width="2"/>
+  <text x="488" y="238" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Funktionskörper</text>
+
+  <!-- Klammer Rückgabewert (unten) -->
+  <path d="M104,272 L104,290 L200,290 L200,272" fill="none" stroke="#8b949e" stroke-width="2"/>
+  <path d="M152,290 L152,306" stroke="#8b949e" stroke-width="2"/>
+  <text x="152" y="328" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Rückgabewert</text>
+
+  <!-- Legende -->
+  <line x1="30" y1="354" x2="730" y2="354" stroke="#21262d" stroke-width="1"/>
+
+  <rect x="30" y="366" width="14" height="14" rx="3" fill="#ff7b72"/>
+  <text x="50" y="377" font-family="'Segoe UI', system-ui, sans-serif" font-size="12.5" fill="#c9d1d9">Schlüsselwort</text>
+
+  <rect x="180" y="366" width="14" height="14" rx="3" fill="#d2a8ff"/>
+  <text x="200" y="377" font-family="'Segoe UI', system-ui, sans-serif" font-size="12.5" fill="#c9d1d9">Funktionsname</text>
+
+  <rect x="345" y="366" width="14" height="14" rx="3" fill="#ffa657"/>
+  <text x="365" y="377" font-family="'Segoe UI', system-ui, sans-serif" font-size="12.5" fill="#c9d1d9">Parameter</text>
+
+  <rect x="475" y="366" width="14" height="14" rx="3" fill="#79c0ff"/>
+  <text x="495" y="377" font-family="'Segoe UI', system-ui, sans-serif" font-size="12.5" fill="#c9d1d9">Docstring / Ausdruck</text>
+
+  <rect x="640" y="366" width="14" height="14" rx="3" fill="#8b949e"/>
+  <text x="660" y="377" font-family="'Segoe UI', system-ui, sans-serif" font-size="12.5" fill="#c9d1d9">Kommentar</text>
+</svg>
