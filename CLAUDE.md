@@ -34,3 +34,19 @@ Da die Sessions live und zeitknapp gehalten werden, aber die Notebooks danach zu
 ## Sprache
 
 Notebooks sind primär auf Deutsch (Erklärtext), Variablennamen sollten aber durchgängig Englisch sein (Konsistenz mit Python-Konventionen und späteren Kursinhalten).
+
+### Tonalität
+
+Zielgruppe sind erwachsene Berufstätige in einer Weiterbildung. Der Ton ist **sachlich und erklärend, nicht anfeuernd**. Kindliche Ansprache und Verniedlichungen gehören nicht in die Notebooks.
+
+Konkret zu vermeiden:
+- Anfeuernde Überschriften-Zusätze wie „— was du jetzt kannst", „Das schaffst du", „Los geht's"
+- Beruhigende Floskeln („keine Sorge", „das ist völlig in Ordnung", „kein Problem, wenn das noch nicht sitzt")
+- Lob- und Erfolgsformeln („super", „gut gemacht", „geschafft")
+- Umgangssprachliche Wendungen („das ist der ganze Sinn der Sache", „stur abarbeiten", „richtig aufgerollt")
+
+Stattdessen:
+- Überschriften benennen den Inhalt, nicht den Gemütszustand: `## Zusammenfassung`, `### Ausblick`, `### Typische Fehlerquellen`
+- Lernziel- und Zusammenfassungslisten im **Infinitiv** statt in Du-Form („Mit `if` steuern, welcher Code ausgeführt wird." statt „Du kannst jetzt mit `if` …")
+
+Direkte Ansprache im laufenden Erklärtext („Mit `open()` kannst du eine Datei öffnen") ist in Ordnung und im Repo etabliert — gemeint ist nur die anfeuernde Rahmung drumherum. Alltagsanalogien zum Einstieg („Stell dir eine Funktion wie ein Küchengerät vor") bleiben ausdrücklich erwünscht.
