@@ -33,8 +33,8 @@ Für die optimale Teilnahme an den Sessions empfehlen wir:
 - [2. Einfache Datenstrukturen](#2-einfache-datenstrukturen)
 - [3. Kontrollstrukturen](#3-kontrollstrukturen)
 - [4. Funktionen](#4-funktionen)
-- [5. Iteratoren, Generatoren und Lazy Evaluation](#5-iteratoren-generatoren-und-lazy-evaluation)
-- [6. Algorithmen](#6-algorithmen)
+- [5. Dateien lesen und schreiben (File Handling)](#5-dateien-lesen-und-schreiben-file-handling)
+- [6. Fehlerbehandlung (Error Handling)](#6-fehlerbehandlung-error-handling)
 - [7. Code-Qualität und Refactoring](#7-code-qualität-und-refactoring)
 - [8. Erweiterte Python Syntax (Syntactic Sugar)](#8-erweiterte-python-syntax-syntactic-sugar)
  
@@ -103,25 +103,29 @@ Funktionen sind essentiell für die Strukturierung und Wiederverwendung von Code
   - *Named Parameter*: Bennante Parameterübergabe
 - **Funktionen Höherer Ordnung**: eingebaute Funktionen in Python
 
-### 5. Iteratoren, Generatoren und Lazy Evaluation
+### 5. Dateien lesen und schreiben (File Handling)
 
-Hier lernst du effiziente Methoden zur Verarbeitung großer Datenmengen und speicherschonende Programmierung kennen.
+Variablen gehen verloren, sobald ein Programm endet. Diese Session zeigt, wie Daten in Dateien gespeichert und wieder eingelesen werden.
 
-- **Iteratoren**: Objekte für schrittweise Durchlaufung von Sequenzen
-- **Generatoren**: Speicher-effiziente Ergebniserzeugung mit `yield`
-- **Generator Comprehensions**: Kompakte Generator-Erstellung
-- **Built-in Funktionen für Iteration**:
-  - `range`, `map`, `filter`, `zip`
-  - `enumerate`, `reversed`
+- **`open()` und `with`**: Dateien öffnen und automatisch wieder schließen
+- **Lesen**: `read()`, `readline()`, `readlines()` und zeilenweises Iterieren mit `for`
+- **Schreiben**: Modi `'w'` (überschreiben) und `'a'` (anhängen), `write()`
+- **Encoding**: Umlaute und Sonderzeichen korrekt verarbeiten mit `encoding="utf-8"`
+- **Fehlerbehandlung**: Fehlende Dateien mit `try`/`except FileNotFoundError` abfangen
+- **Vertiefung (optional)**:
+  - *CSV und JSON*: Strukturierte Daten mit den Modulen `csv` und `json`
+  - *APIs*: JSON-Daten mit `requests` aus dem Internet abrufen
 
-### 6. Algorithmen
+### 6. Fehlerbehandlung (Error Handling)
 
-Diese Session führt in algorithmisches Denken ein und zeigt, wie komplexere Probleme systematisch gelöst werden können.
+Fehler lassen sich in Programmen nicht vollständig vermeiden. Diese Session zeigt, wie Python Fehler als Exceptions meldet und wie Programme kontrolliert darauf reagieren.
 
-- **Algorithmische Problemlösung**: Strukturierte Herangehensweise an Programmieraufgaben
-- **Praktische Implementierungen**: *Euklidischer Algorithmus*
-- **Klassische Algorithmen**: Sortier- und Suchalgorithmen als Beispiele
-- **Rekursion**: Funktionen, die sich selbst aufrufen
+- **Exceptions**: Was bei einem Fehler passiert und wie ein Traceback zu lesen ist
+- **`try`/`except`**: Exceptions abfangen, das Exception-Objekt mit `as` nutzen, mehrere Exception-Typen behandeln
+- **Häufige Exception-Typen**: z.B. `ValueError`, `TypeError`, `ZeroDivisionError`, `KeyError`, `IndexError`
+- **`raise`**: Eigene Exceptions auslösen und abgefangene Exceptions erneut auslösen
+- **Faustregeln**: Wann abfangen, wann das Programm abbrechen lassen, wann selbst auslösen
+- **Vertiefung (optional)**: `finally`, `else` bei `try`, `assert` und eigene Exception-Klassen
 
 ### 7. Refactoring und Code Qualität
 
