@@ -127,7 +127,7 @@ Fehler lassen sich in Programmen nicht vollständig vermeiden. Diese Session zei
 - **Faustregeln**: Wann abfangen, wann das Programm abbrechen lassen, wann selbst auslösen
 - **Vertiefung (optional)**: `finally`, `else` bei `try`, `assert` und eigene Exception-Klassen
 
-### 7. Refactoring und Code Qualität
+### 7. Code-Qualität und Refactoring
 
 *Ankündigung*: Lerne, wie du mithilfe von Refactoring und den PEP8-Konventionen deinen Python-Code klarer, konsistenter und wartbarer gestaltest – mit praktischen Beispielen rund um einen Sudoku-Löser. Diese Live-Session richtet sich an alle, die bereits Grundkenntnisse in Python haben und ihren Code auf das nächste Level bringen möchten.
 
