@@ -9,7 +9,7 @@ Fehler lassen sich nicht vollständig vermeiden. In dieser Session lernt ihr, wi
 
 :computer:Live-Session: Exceptions :snake:
 
-:date:   Wann? Heute am Montag, 05.10.26, 13:30-14:30
+:date:   Wann? Montag, TT.MM.JJ, 13:30-14:30
 :globe_with_meridians:   Wo? :point_right: Link zum Google-Meet Raum
 
 Hallo zusammen,
