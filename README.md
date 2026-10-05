@@ -33,8 +33,8 @@ Für die optimale Teilnahme an den Sessions empfehlen wir:
 - [2. Einfache Datenstrukturen](#2-einfache-datenstrukturen)
 - [3. Kontrollstrukturen](#3-kontrollstrukturen)
 - [4. Funktionen](#4-funktionen)
-- [5. Dateien lesen und schreiben (File Handling)](#5-dateien-lesen-und-schreiben-file-handling)
-- [6. Fehlerbehandlung (Error Handling)](#6-fehlerbehandlung-error-handling)
+- [5. Fehlerbehandlung (Error Handling)](#5-fehlerbehandlung-error-handling)
+- [6. Dateien lesen und schreiben (File Handling)](#6-dateien-lesen-und-schreiben-file-handling)
 - [7. Code-Qualität und Refactoring](#7-code-qualität-und-refactoring)
 - [8. Erweiterte Python Syntax (Syntactic Sugar)](#8-erweiterte-python-syntax-syntactic-sugar)
  
@@ -103,7 +103,18 @@ Funktionen sind essentiell für die Strukturierung und Wiederverwendung von Code
   - *Named Parameter*: Bennante Parameterübergabe
 - **Funktionen Höherer Ordnung**: eingebaute Funktionen in Python
 
-### 5. Dateien lesen und schreiben (File Handling)
+### 5. Fehlerbehandlung (Error Handling)
+
+Fehler lassen sich in Programmen nicht vollständig vermeiden. Diese Session zeigt, wie Python Fehler als Exceptions meldet und wie Programme kontrolliert darauf reagieren.
+
+- **Exceptions**: Was bei einem Fehler passiert und wie ein Traceback zu lesen ist
+- **`try`/`except`**: Exceptions abfangen, das Exception-Objekt mit `as` nutzen, mehrere Exception-Typen behandeln
+- **Häufige Exception-Typen**: z.B. `ValueError`, `TypeError`, `ZeroDivisionError`, `KeyError`, `IndexError`
+- **`raise`**: Eigene Exceptions auslösen und abgefangene Exceptions erneut auslösen
+- **Faustregeln**: Wann abfangen, wann das Programm abbrechen lassen, wann selbst auslösen
+- **Vertiefung (optional)**: `finally`, `else` bei `try`, `assert` und eigene Exception-Klassen
+
+### 6. Dateien lesen und schreiben (File Handling)
 
 Variablen gehen verloren, sobald ein Programm endet. Diese Session zeigt, wie Daten in Dateien gespeichert und wieder eingelesen werden.
 
@@ -115,17 +126,6 @@ Variablen gehen verloren, sobald ein Programm endet. Diese Session zeigt, wie Da
 - **Vertiefung (optional)**:
   - *CSV und JSON*: Strukturierte Daten mit den Modulen `csv` und `json`
   - *APIs*: JSON-Daten mit `requests` aus dem Internet abrufen
-
-### 6. Fehlerbehandlung (Error Handling)
-
-Fehler lassen sich in Programmen nicht vollständig vermeiden. Diese Session zeigt, wie Python Fehler als Exceptions meldet und wie Programme kontrolliert darauf reagieren.
-
-- **Exceptions**: Was bei einem Fehler passiert und wie ein Traceback zu lesen ist
-- **`try`/`except`**: Exceptions abfangen, das Exception-Objekt mit `as` nutzen, mehrere Exception-Typen behandeln
-- **Häufige Exception-Typen**: z.B. `ValueError`, `TypeError`, `ZeroDivisionError`, `KeyError`, `IndexError`
-- **`raise`**: Eigene Exceptions auslösen und abgefangene Exceptions erneut auslösen
-- **Faustregeln**: Wann abfangen, wann das Programm abbrechen lassen, wann selbst auslösen
-- **Vertiefung (optional)**: `finally`, `else` bei `try`, `assert` und eigene Exception-Klassen
 
 ### 7. Code-Qualität und Refactoring
 

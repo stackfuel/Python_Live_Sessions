@@ -4,7 +4,7 @@ Sammlung von Themen, die als sinnvolle Ergänzung zur bestehenden Session-Reihe 
 
 Hintergrund (Basics): Die Zielgruppe ist gemischt (Data Scientist, Data Analyst, Python Coder), wichtigste Zielgruppe bleiben aber die Python Coder. Ab Session 5 (nach Datentypen, Datenstrukturen, Kontrollstrukturen, Funktionen) sollte der Fokus stärker auf allgemeinem Programmieren liegen statt auf Data-Science-Spezifika.
 
-Bereits umgesetzt aus früheren Brainstormings: **Dateien lesen und schreiben** (`basics/5_file_handling`) und **Fehlerbehandlung/Exceptions** (`basics/6_error_handling`) — beide daher hier nicht mehr aufgeführt.
+Bereits umgesetzt aus früheren Brainstormings: **Dateien lesen und schreiben** (`basics/6_file_handling`) und **Fehlerbehandlung/Exceptions** (`basics/5_error_handling`) — beide daher hier nicht mehr aufgeführt.
 
 ## Basics
 
@@ -15,14 +15,14 @@ Bereits umgesetzt aus früheren Brainstormings: **Dateien lesen und schreiben** 
 
 ### Fortgeschrittener, aber noch Basics-Niveau
 
-- **Verschachtelte Datenstrukturen** — Listen von Dicts, Zugriff/Iteration auf mehrstufig verschachtelte Strukturen (z.B. Konfigurationsdaten, API-artige Daten). Baut auf Session 2 auf. Grundlegendes Lesen/Schreiben von JSON ist bereits als optionales Kapitel in `5_file_handling` enthalten — hier ginge es um den Umgang mit verschachtelten Strukturen *innerhalb* von Python, unabhängig vom Dateiformat.
+- **Verschachtelte Datenstrukturen** — Listen von Dicts, Zugriff/Iteration auf mehrstufig verschachtelte Strukturen (z.B. Konfigurationsdaten, API-artige Daten). Baut auf Session 2 auf. Grundlegendes Lesen/Schreiben von JSON ist bereits als optionales Kapitel in `6_file_handling` enthalten — hier ginge es um den Umgang mit verschachtelten Strukturen *innerhalb* von Python, unabhängig vom Dateiformat.
 - **Comprehensions als eigene Session** — List-/Dict-/Set-Comprehensions verdienen eventuell eine eigene, fokussierte Session, statt (wie aktuell) als ein Kapitel unter mehreren in "Erweiterte Python Syntax" (Session 8) mitzulaufen.
-- **Debugging-Grundlagen** — Tracebacks lesen ist inzwischen Teil von `6_error_handling`; offen ist noch eine Session zu allgemeinen Debugging-Techniken: `print`-Debugging vs. Debugger in VS Code, Breakpoints, Watch-Variablen.
+- **Debugging-Grundlagen** — Tracebacks lesen ist inzwischen Teil von `5_error_handling`; offen ist noch eine Session zu allgemeinen Debugging-Techniken: `print`-Debugging vs. Debugger in VS Code, Breakpoints, Watch-Variablen.
 - **Kommandozeile & Skripte** — `sys.argv`, ein Skript statt einer Notebook-Zelle ausführen, kurzer Vorgeschmack auf `venv`/`pip` (baut Brücke zur Advanced Session "Technisches Setup").
 
 ### Bestehende Sessions ohne neuen Inhaltsbedarf
 
-Diese Themen sind bereits als Notebook vorhanden (Sessions 5–7); offen ist ihre Einordnung in der neuen Reihenfolge und eine mögliche Neustrukturierung ihres Inhalts:
+Diese Themen sind bereits als Notebook vorhanden (`basics/98_generators`, `basics/99_algorithms`, `basics/7_refactoring`); offen ist ihre Einordnung in der neuen Reihenfolge und eine mögliche Neustrukturierung ihres Inhalts:
 
 - Iteratoren, Generatoren und Lazy Evaluation
 - Algorithmen
