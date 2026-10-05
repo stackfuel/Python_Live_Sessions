@@ -12,6 +12,7 @@ __pycache__
 basics/6_file_handling/*
 !basics/6_file_handling/file_handling.ipynb
 !basics/6_file_handling/einkaufsliste.txt
+!basics/6_file_handling/README.md
 
 # Dateien, die beim Ausführen des Advanced-Syntax-Notebooks entstehen
 basics/7_advanced_syntax/*.txt

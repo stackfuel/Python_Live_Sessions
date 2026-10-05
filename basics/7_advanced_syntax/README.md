@@ -2,24 +2,33 @@
 
 ## Ankündigung kurz
 "Erweiterte Python-Syntax"
-Entdecke in dieser Session zahlreiche kleine syntaktische Tricks, mit denen du deinen Python-Code effizienter und eleganter gestalten kannst. Lerne Techniken wie Comprehensions, Tuple Unpacking und Type Hints kennen, um dein Programmieren auf das nächste Level zu heben!
+
+Entdecke in dieser Session zahlreiche kleine syntaktische Tricks, mit denen du deinen Python-Code kompakter und lesbarer gestaltest. Lerne Techniken wie Comprehensions, Tuple Unpacking, formatierte f-Strings und Type Hints kennen.
 
 ## Ankündigung lang
 
-:computer: Live-Session:
-Erweiterte Python-Syntax
-:datum:   Wann: Montag, 27.10.2025, 13:30–14:30
-:globus_mit_meridianen:   Wo: https://join.butter.us/stackfuel/webinarazav
+:computer:Live-Session: Erweiterte Python-Syntax :snake:
+
+:date:   Wann? Montag, TT.MM.JJ, 13:30-14:30
+:globe_with_meridians:   Wo? :point_right: Link zum Google-Meet Raum
+
 Hallo zusammen,
-in unserer Session dieser Woche über erweiterte Python-Syntax entdeckt ihr zahlreiche kleine syntaktische Tricks, mit denen ihr euren Python-Code effizienter und eleganter gestalten könnt. Wir zeigen euch Techniken wie Comprehensions, Tuple Unpacking und Type Hints, um euer Programmieren auf das nächste Level zu heben. Vorkenntnisse in Python sind von Vorteil.
-Agenda:
-Ternary Operator
-Comprehensions
-Tuple Unpacking
-F-Strings formatieren
-Verkettete Vergleiche
-with-Statements und Context Manager
-Type Hints
-Optional: Generator Expressions, Walrus Operator, Pattern Matching
-Die Teilnahme an der Live-Session ist nicht verpflichtend.
-Die Session wird nicht aufgezeichnet.
+
+Vier Zeilen für eine Liste, wo eine reichen würde? Python bietet für viele häufige Aufgaben eine kürzere Schreibweise, den sogenannten Syntactic Sugar.
+
+In unserer Live-Session diese Woche schauen wir uns die wichtigsten dieser Kurzschreibweisen an und klären auch, wann die ausführliche Variante die lesbarere bleibt.
+
+Auf dem Programm stehen:
+
+Der ternäre Operator: x if condition else y
+List-, Dictionary- und Set-Comprehensions
+Tuple Unpacking und der *-Operator
+Zahlen in f-Strings formatieren
+Verkettete Vergleiche und das with-Statement
+Type Hints für besser dokumentierten Code
+Optional: Walrus-Operator und Pattern Matching
+
+
+Die Session eignet sich zum Auffrischen und Vertiefen. Grundkenntnisse zu Schleifen und Funktionen sind von Vorteil. Bringt gerne eure Fragen mit.
+
+Ich freue mich auf euch! :blush::rocket:
