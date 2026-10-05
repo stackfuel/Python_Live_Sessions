@@ -15,3 +15,6 @@ basics/6_file_handling/*
 
 # Dateien, die beim Ausführen des Advanced-Syntax-Notebooks entstehen
 basics/7_advanced_syntax/*.txt
+
+# Dateien, die beim Ausführen des Refactoring-Notebooks entstehen
+basics/8_refactoring/bericht.txt

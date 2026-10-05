@@ -1,0 +1,13 @@
+datum;region;produkt;menge;stueckpreis
+2026-09-01;Nord;Kaffee;12;4.99
+2026-09-01;Süd;Tee;20;3.49
+2026-09-02;West;Kaffee;8;4.99
+2026-09-02;Ost;Kakao;15;2.99
+2026-09-03;Nord;Tee;30;3.49
+2026-09-03;Süd;Kaffee;25;4.99
+2026-09-04;West;Kakao;10;2.99
+2026-09-04;Nord;Kaffee;5;4.99
+2026-09-05;Ost;Kaffee;18;4.99
+2026-09-05;Süd;Kakao;40;2.99
+2026-09-06;West;Tee;12;3.49
+2026-09-06;Nord;Kakao;7;2.99
