@@ -9,6 +9,6 @@ playground.py
 
 __pycache__
 # Dateien, die beim Ausführen des File-Handling-Notebooks entstehen
-basics/5_file_handling/*
-!basics/5_file_handling/file_handling.ipynb
-!basics/5_file_handling/einkaufsliste.txt
+basics/6_file_handling/*
+!basics/6_file_handling/file_handling.ipynb
+!basics/6_file_handling/einkaufsliste.txt
