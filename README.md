@@ -35,8 +35,8 @@ Für die optimale Teilnahme an den Sessions empfehlen wir:
 - [4. Funktionen](#4-funktionen)
 - [5. Fehlerbehandlung (Error Handling)](#5-fehlerbehandlung-error-handling)
 - [6. Dateien lesen und schreiben (File Handling)](#6-dateien-lesen-und-schreiben-file-handling)
-- [7. Code-Qualität und Refactoring](#7-code-qualität-und-refactoring)
-- [8. Erweiterte Python Syntax (Syntactic Sugar)](#8-erweiterte-python-syntax-syntactic-sugar)
+- [7. Erweiterte Python Syntax (Syntactic Sugar)](#7-erweiterte-python-syntax-syntactic-sugar)
+- [8. Code-Qualität und Refactoring](#8-code-qualität-und-refactoring)
  
 ### Python Advanced Sessions
 - [1. Technisches Setup](#1-technisches-setup)
@@ -127,31 +127,34 @@ Variablen gehen verloren, sobald ein Programm endet. Diese Session zeigt, wie Da
   - *CSV und JSON*: Strukturierte Daten mit den Modulen `csv` und `json`
   - *APIs*: JSON-Daten mit `requests` aus dem Internet abrufen
 
-### 7. Code-Qualität und Refactoring
+### 7. Erweiterte Python Syntax (Syntactic Sugar)
 
-*Ankündigung*: Lerne, wie du mithilfe von Refactoring und den PEP8-Konventionen deinen Python-Code klarer, konsistenter und wartbarer gestaltest – mit praktischen Beispielen rund um einen Sudoku-Löser. Diese Live-Session richtet sich an alle, die bereits Grundkenntnisse in Python haben und ihren Code auf das nächste Level bringen möchten.
+Diese Session stellt Python-Sprachkonstrukte vor, die häufige Muster kompakter und oft lesbarer machen.
 
-- **PEP 8**: Der offizielle Style Guide für Python-Code
-- **Namenskonventionen**: Best Practices für aussagekräftige Bezeichner
-- **Dokumentation**: Schreiben verständlicher und nützlicher Code-Dokumentation
-- **Code-Refactoring**: Verbesserung bestehenden Codes ohne Funktionsänderung
-- **Praktisches Projekt**: *Sudoku-Implementierung* zur Anwendung aller gelernten Konzepte
-
-### 8. Erweiterte Python Syntax (Syntactic Sugar)
-
-Diese Session stellt elegante Python-Sprachkonstrukte vor, die Code kompakter und lesbarer machen.
-
-- **Comprehensions**: Elegante Erzeugung von Datenstrukturen
-- **Lambda-Funktionen**: Kurzdefinition anonymer Funktionen
-- **Context Manager**: Ressourcenmanagement mit `with`-Statement
-- **Tuple Unpacking**: Entpacken von Tupeln und der `*`-Operator
-- **String Formatting**: `f-strings` und erweiterte Formatierungsmöglichkeiten
-- **Moderne Python-Features**:
-  - *Ternary Operator*: `x if condition else y`
+- **Ternary Operator**: `x if condition else y`
+- **Comprehensions**: Listen, Dictionaries und Sets erzeugen, filtern und umformen
+- **Tuple Unpacking**: Entpacken von Sequenzen und der `*`-Operator
+- **String Formatting**: Zahlen in `f-strings` formatieren
+- **Chaining von Vergleichen**: `a < b < c` statt `a < b and b < c`
+- **Context Manager**: Was hinter dem `with`-Statement steckt
+- **Type Hints**: Typannotationen für bessere Code-Dokumentation
+- **Vertiefung (optional)**:
+  - *Generator Expressions* und verschachtelte Comprehensions
   - *Walrus-Operator*: `:=` für Variablenzuweisung in Expressions
-  - *Chaining von Operatoren*: `a < b < c` statt `a < b and b < c`
   - *Structural Pattern Matching*: `match`-`case` Statements
-  - *Type Hints*: Typannotationen für bessere Code-Dokumentation
+  - *Operatorreihenfolge* und ältere Formen der String-Formatierung
+
+### 8. Code-Qualität und Refactoring
+
+Funktionierender Code ist noch nicht gut lesbarer Code. Diese Session zeigt, wie bestehender Code Schritt für Schritt verbessert wird, ohne sein Verhalten zu verändern, und wendet dabei die Konzepte aller vorherigen Sessions an.
+
+- **Code Smells**: Typische Anzeichen für verbesserungswürdigen Code erkennen
+- **PEP 8**: Der offizielle Style Guide für Python-Code
+- **Namenskonventionen**: Aussagekräftige Bezeichner und Konstanten
+- **Code-Refactoring**: Wiederholungen entfernen, Funktionen auslagern, Bedingungen vereinfachen
+- **Verhalten absichern**: Nach jedem Schritt prüfen, dass das Ergebnis gleich bleibt
+- **Dokumentation**: Docstrings und Type Hints
+- **Praktisches Beispiel**: Ein gewachsenes Auswertungsskript für Verkaufsdaten aus einer CSV-Datei Schritt für Schritt aufräumen
 
 
 
@@ -263,7 +266,7 @@ Diese abschließende Session stellt moderne Python-Features für elegante Klasse
 **"Automate the Boring Stuff with Python" von Al Sweigart**
 - Automatisierung alltäglicher Aufgaben, sehr praxisorientiert
 - Kostenlos verfügbar unter [automatetheboringstuff.com](https://automatetheboringstuff.com/)
-- Perfekt für Sessions 3-6 (Kontrollstrukturen bis Syntactic Sugar)
+- Perfekt für Sessions 3-7 (Kontrollstrukturen bis Syntactic Sugar)
 
 **"Python 3: Das umfassende Handbuch" von Ernesti & Kaiser**
 - Deutschsprachiges Standardwerk für systematische Lerner

@@ -16,24 +16,24 @@ Bereits umgesetzt aus früheren Brainstormings: **Dateien lesen und schreiben** 
 ### Fortgeschrittener, aber noch Basics-Niveau
 
 - **Verschachtelte Datenstrukturen** — Listen von Dicts, Zugriff/Iteration auf mehrstufig verschachtelte Strukturen (z.B. Konfigurationsdaten, API-artige Daten). Baut auf Session 2 auf. Grundlegendes Lesen/Schreiben von JSON ist bereits als optionales Kapitel in `6_file_handling` enthalten — hier ginge es um den Umgang mit verschachtelten Strukturen *innerhalb* von Python, unabhängig vom Dateiformat.
-- **Comprehensions als eigene Session** — List-/Dict-/Set-Comprehensions verdienen eventuell eine eigene, fokussierte Session, statt (wie aktuell) als ein Kapitel unter mehreren in "Erweiterte Python Syntax" (Session 8) mitzulaufen.
+- **Comprehensions als eigene Session** — List-/Dict-/Set-Comprehensions verdienen eventuell eine eigene, fokussierte Session, statt (wie aktuell) als ein Kapitel unter mehreren in "Erweiterte Python Syntax" (Session 7) mitzulaufen.
 - **Debugging-Grundlagen** — Tracebacks lesen ist inzwischen Teil von `5_error_handling`; offen ist noch eine Session zu allgemeinen Debugging-Techniken: `print`-Debugging vs. Debugger in VS Code, Breakpoints, Watch-Variablen.
 - **Kommandozeile & Skripte** — `sys.argv`, ein Skript statt einer Notebook-Zelle ausführen, kurzer Vorgeschmack auf `venv`/`pip` (baut Brücke zur Advanced Session "Technisches Setup").
 
 ### Bestehende Sessions ohne neuen Inhaltsbedarf
 
-Diese Themen sind bereits als Notebook vorhanden (`basics/98_generators`, `basics/99_algorithms`, `basics/7_refactoring`); offen ist ihre Einordnung in der neuen Reihenfolge und eine mögliche Neustrukturierung ihres Inhalts:
+Diese Themen sind bereits als Notebook vorhanden (`basics/98_generators`, `basics/99_algorithms`); offen ist ihre Einordnung in der neuen Reihenfolge und eine mögliche Neustrukturierung ihres Inhalts. Die frühere Sudoku-Fassung der Refactoring-Session liegt geparkt unter `basics/97_refactoring_sudoku`, Refactoring selbst ist jetzt Session 8 mit neuem Beispiel:
 
 - Iteratoren, Generatoren und Lazy Evaluation
 - Algorithmen
-- Refactoring und Code-Qualität
+- Refactoring am Beispiel eines Sudoku-Lösers (Backtracking mit Rekursion, eher für Advanced geeignet)
 
 ## Advanced
 
 Für den Advanced-Track wurden in den bisherigen Gesprächen noch keine zusätzlichen Themen jenseits der bestehenden acht Sessions besprochen. Platzhalter für ein künftiges Brainstorming, z.B. zu Themen wie:
 
 - Logging statt `print`-Debugging
-- Typing/`mypy` vertiefend (über die Type-Hints-Grundlagen aus Session 8 der Basics hinaus)
+- Typing/`mypy` vertiefend (über die Type-Hints-Grundlagen aus Session 7 der Basics hinaus)
 - Packaging eines eigenen kleinen Pakets (`pyproject.toml`, Verteilung)
 
 *(Diese drei Punkte sind unverbindliche Vorschläge, keine im Rahmen dieses Projekts diskutierten Ideen — bei Bedarf gemeinsam schärfen.)*
