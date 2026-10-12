@@ -35,6 +35,8 @@ Da die Sessions live und zeitknapp gehalten werden, aber die Notebooks danach zu
 
 Notebooks sind primär auf Deutsch (Erklärtext), Variablennamen sollten aber durchgängig Englisch sein (Konsistenz mit Python-Konventionen und späteren Kursinhalten).
 
+Keine Gender-Schreibweisen mit Doppelpunkt, Sternchen, Unterstrich oder Binnen-I („Kolleg:in", „Entwickler*innen", „ein:e"). Stattdessen generisches Maskulinum („Entwickler", „Kunden") oder eine Umformulierung im Passiv bzw. neutral.
+
 ### Tonalität
 
 Zielgruppe sind erwachsene Berufstätige in einer Weiterbildung. Der Ton ist **sachlich und erklärend, nicht anfeuernd**. Kindliche Ansprache und Verniedlichungen gehören nicht in die Notebooks.
