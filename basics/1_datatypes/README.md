@@ -10,7 +10,7 @@ In dieser Session legen wir das Fundament für alles Weitere: Wie speichert Pyth
 :computer:Live-Session: Datentypen :snake:
 
 :date:   Wann? Montag, TT.MM.JJ, 13:30-14:30
-:globe_with_meridians:   Wo? :point_right: Link zum Google-Meet Raum
+:globe_with_meridians:   Wo? :point_right: http://meet.google.com/npy-vsqo-pou
 
 Hallo zusammen,
 
@@ -20,11 +20,11 @@ In unserer Live-Session diese Woche legen wir das Fundament für alle weiteren S
 
 Auf dem Programm stehen:
 
-Ausdrücke, Variablen und Zuweisungen
-Wahrheitswerte (bool) und logische Operatoren
-Ganzzahlen (int) und Gleitkommazahlen (float)
-Texte (str): Indexing, Slicing und String-Methoden
-None: wenn kein Wert vorhanden ist
+- Ausdrücke, Variablen und Zuweisungen
+- Wahrheitswerte (bool) und logische Operatoren
+- Ganzzahlen (int) und Gleitkommazahlen (float)
+- Texte (str): Indexing, Slicing und String-Methoden
+- None: wenn kein Wert vorhanden ist
 
 
 Die Session eignet sich sowohl zum Einstieg als auch zum Auffrischen. Vorkenntnisse sind nicht nötig, eure Fragen sind herzlich willkommen.

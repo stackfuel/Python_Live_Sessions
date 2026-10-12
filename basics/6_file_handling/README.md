@@ -10,7 +10,7 @@ Variablen sind weg, sobald ein Programm endet. In dieser Session lernt ihr, wie 
 :computer:Live-Session: File Handling :snake:
 
 :date:   Wann? Montag, TT.MM.JJ, 13:30-14:30
-:globe_with_meridians:   Wo? :point_right: Link zum Google-Meet Raum
+:globe_with_meridians:   Wo? :point_right: http://meet.google.com/npy-vsqo-pou
 
 Hallo zusammen,
 
@@ -20,12 +20,12 @@ In unserer Live-Session diese Woche schauen wir uns an, wie wir in Python Dateie
 
 Auf dem Programm stehen:
 
-Dateien öffnen mit open() und dem with-Statement
-Lesen mit read(), readline(), readlines() und for-Schleifen
-Schreiben und Anhängen mit den Modi 'w' und 'a'
-Umlaute und Sonderzeichen: warum encoding="utf-8" wichtig ist
-Fehlende Dateien mit FileNotFoundError abfangen
-Ausblick: CSV, JSON und Daten aus APIs
+- Dateien öffnen mit open() und dem with-Statement
+- Lesen mit read(), readline(), readlines() und for-Schleifen
+- Schreiben und Anhängen mit den Modi 'w' und 'a'
+- Umlaute und Sonderzeichen: warum encoding="utf-8" wichtig ist
+- Fehlende Dateien mit FileNotFoundError abfangen
+- Ausblick: CSV, JSON und Daten aus APIs
 
 
 Die Session eignet sich sowohl zum Einstieg als auch zum Auffrischen und Vertiefen. Bringt gerne eure Fragen mit.

@@ -10,7 +10,7 @@ Fehler lassen sich nicht vollständig vermeiden. In dieser Session lernt ihr, wi
 :computer:Live-Session: Exceptions :snake:
 
 :date:   Wann? Montag, TT.MM.JJ, 13:30-14:30
-:globe_with_meridians:   Wo? :point_right: Link zum Google-Meet Raum
+:globe_with_meridians:   Wo? :point_right: http://meet.google.com/npy-vsqo-pou
 
 Hallo zusammen,
 
@@ -20,11 +20,11 @@ In unserer Live-Session diese Woche beschäftigen wir uns mit Exception Handling
 
 Auf dem Programm stehen:
 
-Exceptions & Tracebacks verstehen und lesen
-Fehler mit try/except gezielt abfangen
-Mit verschiedenen Exception-Typen umgehen
-Eigene Exceptions mit raise auslösen
-Faustregeln für die Praxis: catch, crash or reraise?
+- Exceptions & Tracebacks verstehen und lesen
+- Fehler mit try/except gezielt abfangen
+- Mit verschiedenen Exception-Typen umgehen
+- Eigene Exceptions mit raise auslösen
+- Faustregeln für die Praxis: catch, crash or reraise?
 
 
 Die Session eignet sich sowohl zum Einstieg als auch zum Auffrischen und Vertiefen. Bringt gerne eure Fragen und eure schönsten Fehlermeldungen mit.

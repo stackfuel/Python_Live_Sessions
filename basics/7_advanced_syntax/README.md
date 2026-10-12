@@ -10,7 +10,7 @@ Entdecke in dieser Session zahlreiche kleine syntaktische Tricks, mit denen du d
 :computer:Live-Session: Erweiterte Python-Syntax :snake:
 
 :date:   Wann? Montag, TT.MM.JJ, 13:30-14:30
-:globe_with_meridians:   Wo? :point_right: Link zum Google-Meet Raum
+:globe_with_meridians:   Wo? :point_right: http://meet.google.com/npy-vsqo-pou
 
 Hallo zusammen,
 
@@ -20,13 +20,13 @@ In unserer Live-Session diese Woche schauen wir uns die wichtigsten dieser Kurzs
 
 Auf dem Programm stehen:
 
-Der ternäre Operator: x if condition else y
-List-, Dictionary- und Set-Comprehensions
-Tuple Unpacking und der *-Operator
-Zahlen in f-Strings formatieren
-Verkettete Vergleiche und das with-Statement
-Type Hints für besser dokumentierten Code
-Optional: Walrus-Operator und Pattern Matching
+- Der ternäre Operator: x if condition else y
+- List-, Dictionary- und Set-Comprehensions
+- Tuple Unpacking und der *-Operator
+- Zahlen in f-Strings formatieren
+- Verkettete Vergleiche und das with-Statement
+- Type Hints für besser dokumentierten Code
+- Optional: Walrus-Operator und Pattern Matching
 
 
 Die Session eignet sich zum Auffrischen und Vertiefen. Grundkenntnisse zu Schleifen und Funktionen sind von Vorteil. Bringt gerne eure Fragen mit.

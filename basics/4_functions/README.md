@@ -10,7 +10,7 @@ Funktionen machen Code wiederverwendbar und übersichtlich. In dieser Session le
 :computer:Live-Session: Funktionen :snake:
 
 :date:   Wann? Montag, TT.MM.JJ, 13:30-14:30
-:globe_with_meridians:   Wo? :point_right: Link zum Google-Meet Raum
+:globe_with_meridians:   Wo? :point_right: http://meet.google.com/npy-vsqo-pou
 
 Hallo zusammen,
 
@@ -20,11 +20,11 @@ In unserer Live-Session diese Woche schauen wir uns an, wie wir eigene Funktione
 
 Auf dem Programm stehen:
 
-Funktionen mit def definieren und mit Docstrings dokumentieren
-Rückgabewerte mit return und der Unterschied zu print()
-Parameter, Standardwerte und benannte Argumente
-Variable Argumentlisten mit *args und **kwargs
-Lambda-Funktionen mit sorted(), map() und filter()
+- Funktionen mit def definieren und mit Docstrings dokumentieren
+- Rückgabewerte mit return und der Unterschied zu print()
+- Parameter, Standardwerte und benannte Argumente
+- Variable Argumentlisten mit *args und **kwargs
+- Lambda-Funktionen mit sorted(), map() und filter()
 
 
 Die Session eignet sich sowohl zum Einstieg als auch zum Auffrischen und Vertiefen. Bringt gerne eure Fragen mit.

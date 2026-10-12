@@ -10,7 +10,7 @@ Einzelne Werte reichen selten aus. In dieser Session lernt ihr die vier grundleg
 :computer:Live-Session: Datenstrukturen :snake:
 
 :date:   Wann? Montag, TT.MM.JJ, 13:30-14:30
-:globe_with_meridians:   Wo? :point_right: Link zum Google-Meet Raum
+:globe_with_meridians:   Wo? :point_right: http://meet.google.com/npy-vsqo-pou
 
 Hallo zusammen,
 
@@ -20,11 +20,11 @@ In unserer Live-Session diese Woche schauen wir uns die vier grundlegenden Daten
 
 Auf dem Programm stehen:
 
-Tupel: feste Zusammenstellungen von Werten
-Listen: Elemente hinzufügen, entfernen und sortieren
-Sets: Duplikate entfernen und Mengenoperationen
-Dictionaries: Werte über Schlüssel nachschlagen
-Veränderlich oder unveränderlich? Und warum eine Zuweisung keine Kopie ist
+- Tupel: feste Zusammenstellungen von Werten
+- Listen: Elemente hinzufügen, entfernen und sortieren
+- Sets: Duplikate entfernen und Mengenoperationen
+- Dictionaries: Werte über Schlüssel nachschlagen
+- Veränderlich oder unveränderlich? Und warum eine Zuweisung keine Kopie ist
 
 
 Die Session eignet sich sowohl zum Einstieg als auch zum Auffrischen und Vertiefen. Bringt gerne eure Fragen mit.
