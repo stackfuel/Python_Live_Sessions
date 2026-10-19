@@ -35,7 +35,7 @@ Ich freue mich auf euch! :blush::rocket:
 # Material
 
 - `Refactoring_Code_Qualität_LS8_PYB.pptx` / `.pdf`: Folien zu Code Smells, Refactoring-Tipps und PEP 8
-- `refactoring.ipynb`: Gemeinsame Übung, Refactoring in sieben Schritten mit Prüfung nach jedem Schritt, anschließend Übungsaufgaben
+- `refactoring.ipynb`: Gemeinsame Übung, Refactoring eines kurzen Auswertungsskripts in vier Schritten mit Prüfung gegen eine Referenz, anschließend Übungsaufgaben
 - `umsaetze.csv`: Verkaufsdaten, die das Notebook einliest
 
 Die frühere Fassung mit dem Sudoku-Löser liegt unter `basics/97_refactoring_sudoku`.
