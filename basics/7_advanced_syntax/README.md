@@ -3,7 +3,7 @@
 ## Ankündigung kurz
 "Erweiterte Python-Syntax"
 
-Entdecke in dieser Session zahlreiche kleine syntaktische Tricks, mit denen du deinen Python-Code kompakter und lesbarer gestaltest. Lerne Techniken wie Comprehensions, Tuple Unpacking, formatierte f-Strings und Type Hints kennen.
+Entdecke in dieser Session zahlreiche kleine syntaktische Tricks, mit denen du deinen Python-Code kompakter und lesbarer gestaltest. Lerne Techniken wie Comprehensions, Tuple Unpacking mit zip(), formatierte f-Strings, kürzere Bedingungen und Type Hints kennen.
 
 ## Ankündigung lang
 
@@ -21,11 +21,13 @@ In unserer Live-Session diese Woche schauen wir uns die wichtigsten dieser Kurzs
 Auf dem Programm stehen:
 
 - Der ternäre Operator: x if condition else y
-- List-, Dictionary- und Set-Comprehensions
-- Tuple Unpacking und der *-Operator
+- List-, Dictionary- und Set-Comprehensions, dazu any() und all()
+- Tuple Unpacking, der *-Operator und zip()
 - Zahlen in f-Strings formatieren
-- Verkettete Vergleiche und das with-Statement
+- Kürzere Bedingungen: verkettete Vergleiche, in und Wahrheitswerte
+- Das with-Statement
 - Type Hints für besser dokumentierten Code
+- Praxisbeispiel: ausführlichen Code mit allen Konstrukten verkürzen
 - Optional: Walrus-Operator und Pattern Matching
 
 
